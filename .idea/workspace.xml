@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="9b3aa18b-56db-4856-bd52-f55b454d4316" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/vendaingressos/controllers/HomeAdminController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/vendaingressos/controllers/HomeUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vendaingressos/controllers/HomeController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vendaingressos/controllers/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vendaingressos/controllers/RegisterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vendaingressos/models/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vendaingressos/models/Usuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vendaingressos/repository/Repository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vendaingressos/repository/Repository.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;luffysertao&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/luffysertao/vendaingressos.git&quot;,
+    &quot;accountId&quot;: &quot;b50c1461-63a6-4a5d-8b0b-c35807583e90&quot;
+  }
+}</component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2ocZdrj0cnrxww59w6re55x2uEd" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Application.executor&quot;: &quot;Run&quot;,
+    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MainApp.executor&quot;: &quot;Run&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Program Files/JetBrains/gson-2.11.0/gson-2.11.0.jar&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15039062&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\bluti\Desktop\UEFS\3ºSemestre\MI - Programação\Probema 3\vendaingressos\lib(professor precisa abrir essa pasta)\javafx-sdk-23.0.1" />
+      <recent name="C:\Users\bluti\Desktop\UEFS\3ºSemestre\MI - Programação\Probema 3\vendaingressos\lib(professor precisa abrir essa pasta)" />
+      <recent name="C:\Users\bluti\Desktop\UEFS\3ºSemestre\MI - Programação\Probema 3\vendaingressos\src\main\java\vendaingressos\models" />
+      <recent name="C:\Users\bluti\Desktop\UEFS\3ºSemestre\MI - Programação\Probema 3\vendaingressos\src\main\java\vendaingressos\controllers" />
+      <recent name="C:\Users\bluti\Desktop\UEFS\3ºSemestre\MI - Programação\Probema 3\vendaingressos\lib (Professor precisa ver essa pasta)" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\bluti\Desktop\UEFS\3ºSemestre\MI - Programação\Probema 3\vendaingressos\src\main\java\vendaingressos" />
+      <recent name="C:\Users\bluti\Desktop\UEFS\3ºSemestre\MI - Programação\Probema 3\vendaingressos\src\main\resources\views" />
+      <recent name="C:\Users\bluti\Desktop\UEFS\3ºSemestre\MI - Programação\Probema 3\vendaingressos\src\main\resources\vendaingressos" />
+      <recent name="C:\Users\bluti\Desktop\UEFS\3ºSemestre\MI - Programação\Probema 3\vendaingressos\src\main\java\vendaingressos\views" />
+      <recent name="C:\Users\bluti\Desktop\UEFS\3ºSemestre\MI - Programação\Probema 3\vendaingressos\lib\Extensoes_SceneBuilder" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="vendaingressos" />
+      <recent name="" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="MainApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="vendaingressos.MainApp" />
+      <module name="vendaingressos" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="vendaingressos.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.MainApp" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9b3aa18b-56db-4856-bd52-f55b454d4316" name="Changes" comment="" />
+      <created>1731170915769</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1731170915769</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
