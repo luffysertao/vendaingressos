@@ -1,0 +1,12 @@
+Caso o senhor ja tenha o JavaFX no projeto, basta só colocar o:
+
+"Add as library" em Gson-2.11.0
+e em jar_files
+
+jar_files é um especie de extensao para icones que usei no scene builder,
+importante que o senhor faça isso no projeto para poder rodar
+
+o gson, mesma coisa do problema 2
+
+e o javafx coloquei ai caso o senhor não tenha instalado ou coisa do tipo,
+mais por precaução mesmo
