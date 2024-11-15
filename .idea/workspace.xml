@@ -4,15 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9b3aa18b-56db-4856-bd52-f55b454d4316" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/vendaingressos/controllers/HomeAdminController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vendaingressos/controllers/HomeUserController.java" afterDir="false" />
+    <list default="true" id="9b3aa18b-56db-4856-bd52-f55b454d4316" name="Changes" comment="Initial commit">
+      <change afterPath="$PROJECT_DIR$/src/main/java/vendaingressos/repository/admins.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vendaingressos/controllers/HomeController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vendaingressos/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vendaingressos/MainApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vendaingressos/controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vendaingressos/controllers/LoginController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/vendaingressos/controllers/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vendaingressos/controllers/RegisterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vendaingressos/models/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vendaingressos/models/Usuario.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/vendaingressos/repository/Repository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vendaingressos/repository/Repository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/login.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +48,9 @@
         <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
       </MavenGeneralSettings>
     </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
@@ -126,6 +129,15 @@
       <option name="presentableId" value="Default" />
       <updated>1731170915769</updated>
     </task>
+    <task id="LOCAL-00001" summary="Initial commit">
+      <option name="closed" value="true" />
+      <created>1731675728601</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1731675728601</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -138,5 +150,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
   </component>
 </project>

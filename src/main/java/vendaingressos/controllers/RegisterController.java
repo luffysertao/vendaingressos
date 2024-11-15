@@ -30,8 +30,7 @@ public class RegisterController {
         repository = new Repository();
         usuarios = repository.carregarUsuarios();
     }
-
-
+    
     @FXML
     public void handleRegister() {
         String nome = nomeField.getText();

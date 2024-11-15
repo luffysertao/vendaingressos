@@ -16,6 +16,7 @@ import vendaingressos.models.Usuario;
 public class Repository {
 
     private static final String FILE_USUARIOS = "src/main/java/vendaingressos/repository/usuarios.json";
+    private static final String FILE_ADMINS = "src/main/java/vendaingressos/repository/admins.json";
 
     private final Gson gson;
 
@@ -66,5 +67,15 @@ public class Repository {
     public List<Usuario> carregarUsuarios() {
         Type usuarioListType = new TypeToken<ArrayList<Usuario>>() {}.getType();
         return carregarDados(FILE_USUARIOS, usuarioListType);
+    }
+
+    // Admins
+    public void salvarAdmin(List<Usuario> usuarios) {
+        salvarDados(usuarios, FILE_ADMINS);
+    }
+
+    public List<Usuario> carregarAdmin() {
+        Type usuarioListType = new TypeToken<ArrayList<Usuario>>() {}.getType();
+        return carregarDados(FILE_ADMINS, usuarioListType);
     }
 }

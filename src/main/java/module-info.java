@@ -8,6 +8,7 @@ module org.example.vendaingressos {
     requires org.kordamp.ikonli.javafx;
     requires org.kordamp.bootstrapfx.core;
     requires com.google.gson;
+    requires jdk.compiler;
 
     opens vendaingressos to javafx.fxml;
     exports vendaingressos;
