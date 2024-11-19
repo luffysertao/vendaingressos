@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9b3aa18b-56db-4856-bd52-f55b454d4316" name="Changes" comment="Initial commit">
-      <change afterPath="$PROJECT_DIR$/src/main/java/vendaingressos/repository/eventos.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vendaingressos/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vendaingressos/MainApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vendaingressos/controllers/HomeAdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vendaingressos/controllers/HomeAdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vendaingressos/models/Evento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vendaingressos/models/Evento.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vendaingressos/repository/Repository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vendaingressos/repository/Repository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vendaingressos/repository/usuarios.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vendaingressos/repository/usuarios.json" afterDir="false" />
-    </list>
+    <list default="true" id="9b3aa18b-56db-4856-bd52-f55b454d4316" name="Changes" comment="Initial commit" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -144,7 +136,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731684609168</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Initial commit">
+      <option name="closed" value="true" />
+      <created>1731975434514</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1731975434515</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

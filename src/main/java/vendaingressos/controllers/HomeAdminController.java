@@ -5,10 +5,12 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
+import vendaingressos.MainApp;
 import vendaingressos.models.Evento;
 import vendaingressos.models.Usuario;
 import vendaingressos.repository.Repository;
 
+import java.io.IOException;
 import java.util.List;
 import java.text.SimpleDateFormat;
 
@@ -133,6 +135,15 @@ public class HomeAdminController {
             }
         } catch (Exception e) {
             System.err.println("Erro ao carregar eventos: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void goLogin() {
+        try {
+            MainApp.showLoginScreen();
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
