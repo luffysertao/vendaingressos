@@ -1,0 +1,16 @@
+[
+  {
+    "nome": "Concerto de Rock",
+    "descricao": "Um grande concerto com as melhores bandas.",
+    "data": "20/12/2024",
+    "assentos": ["A1", "A2", "B1"],
+    "isAtivo": true
+  },
+  {
+    "nome": "Palestra de Tecnologia",
+    "descricao": "Evento sobre inovação tecnológica.",
+    "data": "05/12/2024",
+    "assentos": ["C1", "C2"],
+    "isAtivo": true
+  }
+]

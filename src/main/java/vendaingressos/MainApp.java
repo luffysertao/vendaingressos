@@ -36,11 +36,12 @@ public class MainApp extends Application {
     }
 
     public static void showHomeAdminHome() throws IOException {
-        FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/views/homeAdminHome.fxml"));
+        FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/views/homeAdmin.fxml"));
         Scene scene = new Scene(loader.load(), 1280, 800);
         primaryStage.setScene(scene);
         primaryStage.show();
     }
+
 
     public static void main(String[] args) {
         launch(args);
