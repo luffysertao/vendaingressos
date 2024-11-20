@@ -18,6 +18,7 @@ public class Evento {
     private Date data;
     private List<String> assentos;
     private boolean isAtivo;
+    private String id;
 //    private List<Feedback> feedbacks;
 
     /**
@@ -27,12 +28,13 @@ public class Evento {
      * @param descricao  A descrição do evento.
      * @param data       A data do evento.
      */
-    public Evento(String nome, String descricao, Date data) {
+    public Evento(String nome, String descricao, Date data, String id) {
         this.nome = nome;
         this.descricao = descricao;
         this.data = data;
         this.assentos = new ArrayList<>();
         this.isAtivo = true;
+        this.id = id;
 //        this.feedbacks = new ArrayList<>();
     }
 
@@ -75,6 +77,14 @@ public class Evento {
     public boolean isEventoPassado() {
         Date agora = new Date();
         return data.before(agora);
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     /**

@@ -38,21 +38,30 @@ public class HomeAdminController {
     private StackPane stackPaneAdicionarEventos;
     @FXML
     private StackPane stackPaneAdmins;
+    @FXML
+    private StackPane stackPaneRemoverEvento;
     //--
 
+    //Buttons
     @FXML
     private Button usuariosButton; // Botão "USUÁRIOS"
-
     @FXML
     private Button listagemEventos; // Botão "USUÁRIOS"
-
     @FXML
     private Button adicionarUsuariosButton;
-
     @FXML
     private Button homeButton;
     @FXML
     private Button adminsButton;
+    @FXML
+    private Button removerEvento;
+    @FXML
+    private Button listagemEventosRemove;
+    @FXML
+    private Button adicionarUsuariosButtonRemove;
+    @FXML
+    private Button removerEventoHome;
+    //--
 
     //Adicionar Evento
     @FXML
@@ -63,6 +72,10 @@ public class HomeAdminController {
     private TextField descricaoEventoNovo;
     @FXML
     private TextField assentosEventoNovo;
+    @FXML
+    private TextField idEventoNovo;
+    @FXML
+    private TextField idEvento;
     //--
 
     private final Repository repository;
@@ -80,6 +93,7 @@ public class HomeAdminController {
         stackPaneUsuarios.setVisible(false);
         stackPaneAdicionarEventos.setVisible(false);
         stackPaneAdmins.setVisible(false);
+        stackPaneRemoverEvento.setVisible(false);
 
         carregarEventos();
         carregarUsuarios();
@@ -91,6 +105,7 @@ public class HomeAdminController {
             stackPaneEventos.setVisible(false); // Oculta a StackPane de eventos
             stackPaneAdicionarEventos.setVisible(false);
             stackPaneAdmins.setVisible(false);
+            stackPaneRemoverEvento.setVisible(false);
         });
 
         homeButton.setOnAction(event -> {
@@ -98,6 +113,7 @@ public class HomeAdminController {
             stackPaneEventos.setVisible(true);
             stackPaneAdicionarEventos.setVisible(false);
             stackPaneAdmins.setVisible(false);
+            stackPaneRemoverEvento.setVisible(false);
         });
 
         listagemEventos.setOnAction(event -> {
@@ -105,6 +121,15 @@ public class HomeAdminController {
             stackPaneEventos.setVisible(true);
             stackPaneAdicionarEventos.setVisible(false);
             stackPaneAdmins.setVisible(false);
+            stackPaneRemoverEvento.setVisible(false);
+        });
+
+        listagemEventosRemove.setOnAction(event -> {
+            stackPaneUsuarios.setVisible(false);
+            stackPaneEventos.setVisible(true);
+            stackPaneAdicionarEventos.setVisible(false);
+            stackPaneAdmins.setVisible(false);
+            stackPaneRemoverEvento.setVisible(false);
         });
 
         adicionarUsuariosButton.setOnAction(event -> {
@@ -112,6 +137,15 @@ public class HomeAdminController {
             stackPaneEventos.setVisible(false);
             stackPaneAdicionarEventos.setVisible(true);
             stackPaneAdmins.setVisible(false);
+            stackPaneRemoverEvento.setVisible(false);
+        });
+
+        adicionarUsuariosButtonRemove.setOnAction(event -> {
+            stackPaneUsuarios.setVisible(false);
+            stackPaneEventos.setVisible(false);
+            stackPaneAdicionarEventos.setVisible(true);
+            stackPaneAdmins.setVisible(false);
+            stackPaneRemoverEvento.setVisible(false);
         });
 
         adminsButton.setOnAction(event -> {
@@ -119,6 +153,23 @@ public class HomeAdminController {
             stackPaneEventos.setVisible(false);
             stackPaneAdicionarEventos.setVisible(false);
             stackPaneAdmins.setVisible(true);
+            stackPaneRemoverEvento.setVisible(false);
+        });
+
+        removerEvento.setOnAction(event -> {
+            stackPaneUsuarios.setVisible(false);
+            stackPaneEventos.setVisible(false);
+            stackPaneAdicionarEventos.setVisible(false);
+            stackPaneAdmins.setVisible(false);
+            stackPaneRemoverEvento.setVisible(true);
+        });
+
+        removerEventoHome.setOnAction(event -> {
+            stackPaneUsuarios.setVisible(false);
+            stackPaneEventos.setVisible(false);
+            stackPaneAdicionarEventos.setVisible(false);
+            stackPaneAdmins.setVisible(false);
+            stackPaneRemoverEvento.setVisible(true);
         });
     }
 
@@ -151,7 +202,10 @@ public class HomeAdminController {
                     Text descricao = new Text("Descrição: " + evento.getDescricao());
                     descricao.setStyle("-fx-font-size: 14;");
 
-                    vboxEvento.getChildren().addAll(nome, data, ingressos, descricao);
+                    Text id = new Text("ID: " + evento.getId());
+                    id.setStyle("-fx-font-size: 14;");
+
+                    vboxEvento.getChildren().addAll(nome, data, ingressos, descricao, id);
                     eventosContainer.getChildren().add(vboxEvento);
                 }
             }
@@ -267,8 +321,9 @@ public class HomeAdminController {
         String dataString = dataEventoNovo.getText();
         String descricao = descricaoEventoNovo.getText();
         String assentosString = assentosEventoNovo.getText();
+        String id = idEventoNovo.getText();
 
-        if (nome.isEmpty() || dataString.isEmpty() || descricao.isEmpty() || assentosString.isEmpty()) {
+        if (nome.isEmpty() || dataString.isEmpty() || descricao.isEmpty() || assentosString.isEmpty() || id.isEmpty()) {
             ErroController.exibirMensagemErro("Erro de Validação", "Todos os campos devem ser preenchidos.");
             return;
         }
@@ -285,7 +340,15 @@ public class HomeAdminController {
             return;
         }
 
-        Evento evento = new Evento(nome, descricao, data);
+        // Verifica se já existe um evento com o mesmo ID
+        for (Evento eventoExistente : eventos) {
+            if (eventoExistente.getId().equals(id)) {
+                ErroController.exibirMensagemErro("Erro de ID", "Já existe um evento com o ID fornecido.");
+                return;
+            }
+        }
+
+        Evento evento = new Evento(nome, descricao, data, id);
         evento.setAssentos(assentos);
 
         eventos.add(evento);
@@ -296,6 +359,39 @@ public class HomeAdminController {
         List<Evento> eventosCarregados = repository.carregarEventos();
         eventosCarregados.forEach(System.out::println);
     }
+
+    public void removerEvento() {
+        // Obter o ID do evento que o usuário deseja remover
+        String id = idEvento.getText();
+
+        try {
+            // Carregar a lista de eventos do repositório
+            List<Evento> eventos = repository.carregarEventos();
+
+            // Iterar sobre a lista de eventos e procurar o evento com o ID correspondente
+            for (Evento evento : eventos) {
+                if (evento != null && evento.getId().equals(id)) {
+                    // Encontrou o evento, então remove da lista
+                    eventos.remove(evento);
+                    System.out.println("Evento removido com sucesso!");
+
+                    // Atualizar a lista no repositório (salvando novamente o arquivo JSON ou banco de dados)
+                    repository.salvarEventos(eventos);
+                    carregarEventos();
+                    return; // Evento removido, então termina o método
+                }
+            }
+
+            // Caso o evento não seja encontrado
+            ErroController.exibirMensagemErro("Erro de Validação", "Evento com ID " + id + " não encontrado.");
+
+        } catch (Exception e) {
+            // Caso ocorra algum erro durante o processo
+            System.err.println("Erro ao remover evento: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+
 
 
     @FXML
