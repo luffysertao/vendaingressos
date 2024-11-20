@@ -48,8 +48,14 @@
                <PasswordField fx:id="senhaField" promptText="Senha" style="-fx-background-color: transparent; -fx-border-color: #FF4136; -fx-border-width: 0px 0px 2px 0px;" />
             </VBox>
             <Hyperlink layoutX="116.0" layoutY="382.0" text="Esqueceu sua senha?" textFill="#ff4136" />
-            <Button layoutX="128.0" layoutY="337.0" prefWidth="95.0" style="-fx-background-color: #FF4136;" text="Entrar" textFill="WHITE" onAction="#handleLogin"/>
+            <Button layoutX="128.0" layoutY="337.0" onAction="#handleLogin" prefWidth="95.0" style="-fx-background-color: #FF4136;" text="Entrar" textFill="WHITE" />
             <Hyperlink fx:id="registerLink" layoutX="146.0" layoutY="409.0" onAction="#goRegister" text="Cadastrar" textFill="#ff4136" />
+            <ImageView fitHeight="9.0" fitWidth="11.0" layoutX="142.0" layoutY="459.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/copywriting.png" />
+               </image>
+            </ImageView>
+            <Text layoutX="157.0" layoutY="468.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Omrac" />
          </children>
       </AnchorPane>
    </right>

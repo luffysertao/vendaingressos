@@ -76,11 +76,11 @@ public class Repository {
     }
 
     // Admins
-    public void salvarAdmin(List<Usuario> usuarios) {
+    public void salvarAdmins(List<Usuario> usuarios) {
         salvarDados(usuarios, FILE_ADMINS);
     }
 
-    public List<Usuario> carregarAdmin() {
+    public List<Usuario> carregarAdmins() {
         Type usuarioListType = new TypeToken<ArrayList<Usuario>>() {}.getType();
         return carregarDados(FILE_ADMINS, usuarioListType);
     }

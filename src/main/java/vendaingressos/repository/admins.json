@@ -1,6 +1,16 @@
 [
   {
     "login": "admin1",
-    "senha": "12345678"
+    "senha": "12345678",
+    "nome": "asd",
+    "cpf": "asda",
+    "email": "sdasd"
+  },
+  {
+    "login": "admin2",
+    "senha": "12345678",
+    "nome": "felipe",
+    "cpf": "sdas",
+    "email": "dasd"
   }
 ]

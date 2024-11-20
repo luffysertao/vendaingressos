@@ -35,7 +35,7 @@ public class LoginController {
         String login = loginField.getText();
         String senha = senhaField.getText();
 
-        List<Usuario> admins = repository.carregarAdmin();
+        List<Usuario> admins = repository.carregarAdmins();
 
         for (Usuario admin : admins) {
             if (admin.getLogin().equals(login) && admin.getSenha().equals(senha)) {

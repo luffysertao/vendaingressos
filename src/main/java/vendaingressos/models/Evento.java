@@ -63,6 +63,10 @@ public class Evento {
         return data;
     }
 
+    public void setAssentos(List<String> assentos) {
+        this.assentos = assentos;
+    }
+
     /**
      * Verifica se o evento já ocorreu.
      *
