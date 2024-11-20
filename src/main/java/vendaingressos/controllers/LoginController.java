@@ -1,15 +1,8 @@
 package vendaingressos.controllers;
 
-import com.sun.tools.javac.Main;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.Scene;
-import javafx.scene.control.Hyperlink;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import vendaingressos.MainApp;
 import vendaingressos.models.Usuario;
 import vendaingressos.repository.Repository;
