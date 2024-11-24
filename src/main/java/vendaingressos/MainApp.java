@@ -35,13 +35,19 @@ public class MainApp extends Application {
         primaryStage.show();
     }
 
-    public static void showHomeAdminHome() throws IOException {
+    public static void showHomeAdmin() throws IOException {
         FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/views/homeAdmin.fxml"));
         Scene scene = new Scene(loader.load(), 1280, 800);
         primaryStage.setScene(scene);
         primaryStage.show();
     }
 
+    public static void showHomeUser() throws IOException {
+        FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/views/homeUser.fxml"));
+        Scene scene = new Scene(loader.load(), 1280, 800);
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
 
     public static void main(String[] args) {
         launch(args);

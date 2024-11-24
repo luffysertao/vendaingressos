@@ -312,9 +312,6 @@ public class HomeAdminController {
         }
     }
 
-
-
-
     @FXML
     public void criarEvento() {
         String nome = nomeEventoNovo.getText();
@@ -361,39 +358,29 @@ public class HomeAdminController {
     }
 
     public void removerEvento() {
-        // Obter o ID do evento que o usuário deseja remover
         String id = idEvento.getText();
 
         try {
-            // Carregar a lista de eventos do repositório
             List<Evento> eventos = repository.carregarEventos();
 
-            // Iterar sobre a lista de eventos e procurar o evento com o ID correspondente
             for (Evento evento : eventos) {
                 if (evento != null && evento.getId().equals(id)) {
-                    // Encontrou o evento, então remove da lista
                     eventos.remove(evento);
                     System.out.println("Evento removido com sucesso!");
 
-                    // Atualizar a lista no repositório (salvando novamente o arquivo JSON ou banco de dados)
                     repository.salvarEventos(eventos);
                     carregarEventos();
-                    return; // Evento removido, então termina o método
+                    return;
                 }
             }
 
-            // Caso o evento não seja encontrado
             ErroController.exibirMensagemErro("Erro de Validação", "Evento com ID " + id + " não encontrado.");
 
         } catch (Exception e) {
-            // Caso ocorra algum erro durante o processo
             System.err.println("Erro ao remover evento: " + e.getMessage());
             e.printStackTrace();
         }
     }
-
-
-
     @FXML
     private void goLogin() {
         try {

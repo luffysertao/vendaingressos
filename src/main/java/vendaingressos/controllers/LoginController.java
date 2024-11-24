@@ -28,17 +28,26 @@ public class LoginController {
         String login = loginField.getText();
         String senha = senhaField.getText();
 
+        // Carrega listas de usuários e administradores
+        List<Usuario> usuarios = repository.carregarUsuarios();
         List<Usuario> admins = repository.carregarAdmins();
 
-        for (Usuario admin : admins) {
-            if (admin.getLogin().equals(login) && admin.getSenha().equals(senha)) {
-                MainApp.showHomeAdminHome();
-                return;
-            }
+        // Verifica se o login pertence a um administrador
+        if (admins.stream().anyMatch(admin -> admin.getLogin().equals(login) && admin.getSenha().equals(senha))) {
+            MainApp.showHomeAdmin();
+            return;
         }
 
-        System.out.println("Login ou senha inválidos para administrador.");
+        // Verifica se o login pertence a um usuário comum
+        if (usuarios.stream().anyMatch(usuario -> usuario.getLogin().equals(login) && usuario.getSenha().equals(senha))) {
+            MainApp.showHomeUser();
+            return;
+        }
+
+        // Exibe erro se nenhum login for válido
+        ErroController.exibirMensagemErro("Erro de Validação", "Login e/ou senha inválidos.");
     }
+
 
     @FXML
     private void goRegister() {

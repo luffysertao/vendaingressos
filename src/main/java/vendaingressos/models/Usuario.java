@@ -11,9 +11,9 @@ public class Usuario {
     private String nome; // Nome completo do usuário
     private String cpf; // CPF do usuário
     private String email; // Email do usuário
-//    public boolean isAdmin; // Indica se o usuário é um administrador
-//    private List<Ingresso> ingressos; // Lista de ingressos comprados pelo usuário
-//    private List<Pagamento> pagamentos; // Lista de pagamentos realizados pelo usuário
+    public boolean isAdmin; // Indica se o usuário é um administrador
+    private List<Ingresso> ingressos; // Lista de ingressos comprados pelo usuário
+    private List<Pagamento> pagamentos; // Lista de pagamentos realizados pelo usuário
 
     /**
      * Construtor para inicializar um novo usuário.
@@ -33,9 +33,9 @@ public class Usuario {
         this.nome = nome;
         this.cpf = cpf;
         this.email = email;
-//        this.isAdmin = isAdmin;
-//        this.ingressos = new ArrayList<>();
-//        this.pagamentos = new ArrayList<>();
+        this.isAdmin = false;
+        this.ingressos = new ArrayList<>();
+        this.pagamentos = new ArrayList<>();
     }
 
     public String getLogin() {
@@ -87,106 +87,106 @@ public class Usuario {
                 '}';
     }
 
-    //    /**
-//     * Compara se dois usuários são iguais com base no login.
-//     *
-//     * @param o O objeto a ser comparado.
-//     * @return true se os usuários forem iguais, false caso contrário.
-//     */
-//    public boolean equals(Object o) {
-//        if (this == o) {
-//            return true;
-//        }
-//        if (o == null || getClass() != o.getClass()) {
-//            return false;
-//        }
-//        Usuario usuario = (Usuario) o;
-//        return Objects.equals(login, usuario.login);
-//    }
-//
-//    /**
-//     * Gera um código hash para o usuário baseado no login.
-//     *
-//     * @return O código hash do usuário.
-//     */
-//    public int hashCode() {
-//        return Objects.hash(login);
-//    }
+        /**
+     * Compara se dois usuários são iguais com base no login.
+     *
+     * @param o O objeto a ser comparado.
+     * @return true se os usuários forem iguais, false caso contrário.
+     */
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Usuario usuario = (Usuario) o;
+        return Objects.equals(login, usuario.login);
+    }
 
-//    /**
-//     * Retorna a lista de ingressos do usuário.
-//     *
-//     * @return A lista de ingressos comprados pelo usuário.
-//     */
-//    public List<Ingresso> getIngressos() {
-//        return ingressos;
-//    }
-//
-//    /**
-//     * Retorna a lista de pagamentos do usuário.
-//     *
-//     * @return A lista de pagamentos realizados pelo usuário.
-//     */
-//    public List<Pagamento> getPagamentos() {
-//        return pagamentos;
-//    }
-//
-//    /**
-//     * Adiciona um ingresso à lista de ingressos do usuário.
-//     *
-//     * @param ingresso O ingresso a ser adicionado.
-//     */
-//    public void adicionarIngresso(Ingresso ingresso) {
-//        ingressos.add(ingresso);
-//    }
-//
-//    /**
-//     * Remove um ingresso da lista de ingressos do usuário.
-//     *
-//     * @param ingresso O ingresso a ser removido.
-//     */
-//    public void removerIngresso(Ingresso ingresso) {
-//        ingressos.remove(ingresso);
-//    }
-//
-//    /**
-//     * Edita o perfil do usuário, atualizando o nome, email e senha.
-//     *
-//     * @param novoNome   O novo nome do usuário.
-//     * @param novoEmail  O novo email do usuário.
-//     * @param novaSenha  A nova senha do usuário.
-//     */
-//    public void editarPerfil(String novoNome, String novoEmail, String novaSenha) {
-//        if (novoNome != null && !novoNome.isEmpty()) {
-//            this.nome = novoNome;
-//        }
-//        if (novoEmail != null && !novoEmail.isEmpty()) {
-//            this.email = novoEmail;
-//        }
-//        if (novaSenha != null && !novaSenha.isEmpty()) {
-//            this.senha = novaSenha;
-//        }
-//    }
-//
-//    /**
-//     * Adiciona um pagamento à lista de pagamentos do usuário.
-//     *
-//     * @param pagamento O pagamento a ser adicionado.
-//     */
-//    public void adicionarPagamento(Pagamento pagamento) {
-//        pagamentos.add(pagamento);
-//    }
-//
-//    /**
-//     * Remove um pagamento da lista de pagamentos do usuário, caso ele esteja presente.
-//     *
-//     * @param pagamento O pagamento a ser removido.
-//     */
-//    public void removerPagamento(Pagamento pagamento) {
-//        if (pagamentos.contains(pagamento)) {
-//            pagamentos.remove(pagamento);
-//        }
-//    }
+    /**
+     * Gera um código hash para o usuário baseado no login.
+     *
+     * @return O código hash do usuário.
+     */
+    public int hashCode() {
+        return Objects.hash(login);
+    }
+
+    /**
+     * Retorna a lista de ingressos do usuário.
+     *
+     * @return A lista de ingressos comprados pelo usuário.
+     */
+    public List<Ingresso> getIngressos() {
+        return ingressos;
+    }
+
+    /**
+     * Retorna a lista de pagamentos do usuário.
+     *
+     * @return A lista de pagamentos realizados pelo usuário.
+     */
+    public List<Pagamento> getPagamentos() {
+        return pagamentos;
+    }
+
+    /**
+     * Adiciona um ingresso à lista de ingressos do usuário.
+     *
+     * @param ingresso O ingresso a ser adicionado.
+     */
+    public void adicionarIngresso(Ingresso ingresso) {
+        ingressos.add(ingresso);
+    }
+
+    /**
+     * Remove um ingresso da lista de ingressos do usuário.
+     *
+     * @param ingresso O ingresso a ser removido.
+     */
+    public void removerIngresso(Ingresso ingresso) {
+        ingressos.remove(ingresso);
+    }
+
+    /**
+     * Edita o perfil do usuário, atualizando o nome, email e senha.
+     *
+     * @param novoNome   O novo nome do usuário.
+     * @param novoEmail  O novo email do usuário.
+     * @param novaSenha  A nova senha do usuário.
+     */
+    public void editarPerfil(String novoNome, String novoEmail, String novaSenha) {
+        if (novoNome != null && !novoNome.isEmpty()) {
+            this.nome = novoNome;
+        }
+        if (novoEmail != null && !novoEmail.isEmpty()) {
+            this.email = novoEmail;
+        }
+        if (novaSenha != null && !novaSenha.isEmpty()) {
+            this.senha = novaSenha;
+        }
+    }
+
+    /**
+     * Adiciona um pagamento à lista de pagamentos do usuário.
+     *
+     * @param pagamento O pagamento a ser adicionado.
+     */
+    public void adicionarPagamento(Pagamento pagamento) {
+        pagamentos.add(pagamento);
+    }
+
+    /**
+     * Remove um pagamento da lista de pagamentos do usuário, caso ele esteja presente.
+     *
+     * @param pagamento O pagamento a ser removido.
+     */
+    public void removerPagamento(Pagamento pagamento) {
+        if (pagamentos.contains(pagamento)) {
+            pagamentos.remove(pagamento);
+        }
+    }
 }
 
 /*******************************
