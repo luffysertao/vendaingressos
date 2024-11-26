@@ -4,7 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import vendaingressos.MainApp;
-import vendaingressos.models.Usuario;
+import vendaingressos.models.*;
 import vendaingressos.repository.Repository;
 
 import java.io.IOException;
@@ -18,6 +18,8 @@ public class LoginController {
     private PasswordField senhaField;
 
     private Repository repository;
+
+    private static Usuario usuarioAtual;
 
     public LoginController() {
         this.repository = new Repository();
@@ -33,21 +35,30 @@ public class LoginController {
         List<Usuario> admins = repository.carregarAdmins();
 
         // Verifica se o login pertence a um administrador
-        if (admins.stream().anyMatch(admin -> admin.getLogin().equals(login) && admin.getSenha().equals(senha))) {
-            MainApp.showHomeAdmin();
-            return;
+        for (Usuario admin : admins) {
+            if (admin.getLogin().equals(login) && admin.getSenha().equals(senha)) {
+                usuarioAtual = admin; // Salva o administrador na variável
+                MainApp.showHomeAdmin();
+                return;
+            }
         }
 
         // Verifica se o login pertence a um usuário comum
-        if (usuarios.stream().anyMatch(usuario -> usuario.getLogin().equals(login) && usuario.getSenha().equals(senha))) {
-            MainApp.showHomeUser();
-            return;
+        for (Usuario usuario : usuarios) {
+            if (usuario.getLogin().equals(login) && usuario.getSenha().equals(senha)) {
+                usuarioAtual = usuario; // Salva o usuário na variável
+                MainApp.showHomeUser();
+                return;
+            }
         }
 
         // Exibe erro se nenhum login for válido
         ErroController.exibirMensagemErro("Erro de Validação", "Login e/ou senha inválidos.");
     }
 
+    public static Usuario getUsuarioAtual() {
+        return usuarioAtual;
+    }
 
     @FXML
     private void goRegister() {

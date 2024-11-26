@@ -8,7 +8,8 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import vendaingressos.MainApp;
 import vendaingressos.models.Evento;
-import vendaingressos.models.Usuario;
+import vendaingressos.models.Ingresso;
+import vendaingressos.models.*;
 import vendaingressos.repository.Repository;
 
 import java.io.IOException;
@@ -101,9 +102,8 @@ public class HomeUserController {
 
                 for (Evento evento : eventos) {
                     if (evento != null && evento.getId().equals(id)) {
-                        this.metodoPagamento(); // Certifique-se de completar a lógica necessária aqui
                         eventoEncontrado = true;
-                        break; // Evento encontrado, sai do loop
+                        break;
                     }
                 }
                 if (!eventoEncontrado) {
@@ -118,23 +118,78 @@ public class HomeUserController {
             stackPaneEventos.setVisible(false);
             stackPaneSelecionarIngresso.setVisible(false);
             stackPaneComprarIngresso.setVisible(true);
+            this.metodoPagamento();
             stackPaneFeedbacksEventos.setVisible(false);
         });
     }
 
-    public void metodoPagamento(){
+    public void metodoPagamento() {
+        // Captura os dados do formulário
         String nome = nomeCartaoCompra.getText();
         String cpf = cpfCompra.getText();
         String validade = validadeCartaoCompra.getText();
         String numero = numeroCartaoCompra.getText();
         String cvv = cvvCartaoCompra.getText();
-
-        //Criar o box para listagem dos assentos
         String assento = assentoDesejadoCompra.getText();
+        String id = idEvento.getText();
 
+        // Valida os campos obrigatórios
+        if (nome.isEmpty() || cpf.isEmpty() || validade.isEmpty() || numero.isEmpty() || cvv.isEmpty() || assento.isEmpty()) {
+            ErroController.exibirMensagemErro("Erro de Validação", "Todos os campos devem ser preenchidos.");
+            return;
+        }
 
+        // Cria o pagamento
+        Pagamento pagamento = new Pagamento(
+                "Cartão de Crédito", // Tipo de pagamento
+                nome,                // Nome do titular
+                cpf,                 // CPF
+                null,                // Email (opcional)
+                numero,              // Número do cartão
+                validade,            // Validade do cartão
+                cvv                 // Código de segurança
+        );
 
+        // Valida os dados do pagamento
+        if (!pagamento.validarCartao()) {
+            System.out.println("Os dados do cartão de crédito são inválidos.");
+            return;
+        }
+
+        // Carrega eventos e encontra o evento correspondente
+        Evento eventoIngresso = null;
+        List<Evento> eventos = repository.carregarEventos();
+        for (Evento evento : eventos) {
+            if (evento != null && evento.getId().equals(id)) {
+                eventoIngresso = evento;
+                break;
+            }
+        }
+
+        if (eventoIngresso == null) {
+            System.out.println("Evento não encontrado. Verifique o ID do evento.");
+            return;
+        }
+
+        // Gera um preço aleatório entre R$50.00 e R$200.00
+        double precoAleatorio = 50.0 + (Math.random() * (200.0 - 50.0));
+
+        // Associa o pagamento ao usuário e adiciona o ingresso
+        Usuario usuario = LoginController.getUsuarioAtual(); // Método para obter o usuário logado
+        if (usuario != null) {
+            usuario.adicionarPagamento(pagamento);
+
+            // Cria um ingresso para o assento desejado com preço aleatório
+            Ingresso ingresso = new Ingresso(eventoIngresso, precoAleatorio, assento);
+            usuario.adicionarIngresso(ingresso);
+
+            System.out.println("Pagamento realizado com sucesso! Ingresso adicionado ao usuário.");
+        } else {
+            System.out.println("Usuário não encontrado. Por favor, faça login.");
+        }
     }
+
+
 
     private void carregarEventos() {
         try {
