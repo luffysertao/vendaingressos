@@ -183,7 +183,6 @@ public class HomeUserController {
         if (usuario != null) {
             usuario.adicionarPagamento(pagamento);
             System.out.println("ok1");
-            // Cria um ingresso para o assento desejado com preço aleatório
             Ingresso ingresso = new Ingresso(eventoIngresso, precoAleatorio, assentoDes);
             System.out.println("ok2");
             usuario.adicionarIngresso(ingresso);
