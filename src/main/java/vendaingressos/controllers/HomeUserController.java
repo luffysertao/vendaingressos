@@ -188,7 +188,6 @@ public class HomeUserController {
         } else {
             ErroController.exibirMensagemErro("Erro de Validação", "Usuário não encontrado. Por favor, faça login.");
         }
-
         stackPaneEventos.setVisible(true); //alterar para tela de compras
         stackPaneSelecionarIngresso.setVisible(false);
         stackPaneComprarIngresso.setVisible(false);
