@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1360.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vendaingressos.controllers.HomeAdminController">
+   <left>
+      <AnchorPane prefHeight="800.0" prefWidth="251.0" style="-fx-background-color: #FF4136;" BorderPane.alignment="CENTER">
+         <children>
+            <VBox layoutX="50.0" layoutY="268.0" prefHeight="320.0" prefWidth="62.0">
+               <children>
+                  <FontAwesomeIcon fill="WHITE" glyphName="HOME" size="3em" text="">
+                     <VBox.margin>
+                        <Insets left="2.0" top="25.0" />
+                     </VBox.margin>
+                  </FontAwesomeIcon>
+                  <FontAwesomeIcon fill="WHITE" glyphName="USER" size="3em" text="" wrappingWidth="45.71428680419922">
+                     <VBox.margin>
+                        <Insets left="5.0" top="25.0" />
+                     </VBox.margin>
+                  </FontAwesomeIcon>
+                  <FontAwesomeIcon fill="WHITE" glyphName="LIST_UL" size="3em" wrappingWidth="48.0">
+                     <VBox.margin>
+                        <Insets top="25.0" />
+                     </VBox.margin>
+                  </FontAwesomeIcon>
+                  <FontAwesomeIcon fill="WHITE" glyphName="GEAR" size="3em" text="">
+                     <VBox.margin>
+                        <Insets left="5.0" top="25.0" />
+                     </VBox.margin>
+                  </FontAwesomeIcon>
+               </children>
+               <padding>
+                  <Insets top="25.0" />
+               </padding>
+            </VBox>
+            <VBox layoutX="53.0" layoutY="27.0" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <AnchorPane prefHeight="200.0" prefWidth="137.0">
+                     <children>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="-4.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icon.png" />
+                           </image>
+                        </ImageView>
+                        <Text fill="WHITE" layoutX="26.0" layoutY="171.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ola, Admin!">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </VBox>
+            <Text fill="WHITE" layoutX="110.0" layoutY="344.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HOME">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="109.0" layoutY="404.0" strokeType="OUTSIDE" strokeWidth="0.0" text="USUÁRIOS">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="108.0" layoutY="464.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ADMIN'S">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="107.0" layoutY="525.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CONFIG">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Text>
+            <AnchorPane layoutX="63.0" layoutY="581.0" prefHeight="62.0" prefWidth="95.0">
+               <children>
+                  <FontAwesomeIcon fill="WHITE" glyphName="SQUARE" layoutX="25.0" layoutY="68.0" size="4em" text="" />
+                  <Text fill="WHITE" layoutX="77.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sair">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Text>
+                  <FontAwesomeIcon fill="#ff4136" glyphName="ARROW_LEFT" layoutX="34.0" layoutY="59.0" size="2em" text="" />
+                  <Hyperlink layoutX="23.0" layoutY="27.0" onAction="#goLogin" prefHeight="50.0" prefWidth="93.0" />
+               </children>
+            </AnchorPane>
+            <Button fx:id="usuariosButton" layoutX="48.0" layoutY="376.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="164.0" style="-fx-background-color: transparent;" />
+            <Button fx:id="homeButton" layoutX="49.0" layoutY="316.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="128.0" style="-fx-background-color: transparent;" />
+            <Text layoutX="111.0" layoutY="725.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Omrac" />
+            <ImageView fitHeight="16.0" fitWidth="17.0" layoutX="91.0" layoutY="712.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/copywriting.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="adminsButton" layoutX="45.0" layoutY="438.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="149.0" style="-fx-background-color: transparent;" />
+         </children>
+      </AnchorPane>
+   </left>
+   <center>
+      <AnchorPane prefHeight="1080.0" prefWidth="1523.0" style="-fx-background-color: #f1f1f1; -fx-border-color: C1C1C1;" BorderPane.alignment="CENTER">
+         <children>
+            <!-- Stack de Usuário -->
+            <StackPane fx:id="stackPaneUsuarios" prefHeight="768.0" prefWidth="1109.0">
+               <children>
+                  <AnchorPane prefHeight="685.0" prefWidth="997.0">
+                     <children>
+                        <VBox layoutX="51.0" layoutY="16.0" prefHeight="97.0" prefWidth="1000.0" style="-fx-background-color: FFFF; -fx-background-radius: 30px 30px 30px 30px; -fx-border-radius: 30px 30px 30px 30px;">
+                           <children>
+                              <AnchorPane prefHeight="97.0" prefWidth="994.0">
+                                 <children>
+                                    <Text fill="#ff4136" layoutX="41.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dashboard">
+                                       <font>
+                                          <Font name="System Bold" size="20.0" />
+                                       </font>
+                                    </Text>
+                                    <Separator layoutX="172.0" layoutY="34.0" orientation="VERTICAL" prefHeight="29.0" prefWidth="4.0" style="-fx-border-color: 0000;" />
+                                    <Text layoutX="198.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Usuarios">
+                                       <font>
+                                          <Font name="System Bold" size="20.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <ScrollPane layoutX="55.0" layoutY="126.0" prefHeight="568.0" prefWidth="1000.0" style="-fx-background-color: FFFF; -fx-background-radius: 30px 30px 30px 30px; -fx-border-radius: 30px 30px 30px 30px;">
+                           <content>
+                              <AnchorPane prefHeight="695.0" prefWidth="987.0">
+                                 <children>
+                                    <VBox fx:id="usuariosContainer" prefHeight="568.0" prefWidth="1000.0" style="-fx-background-color: FFFF; -fx-background-radius: 30px 30px 30px 30px; -fx-border-radius: 30px 30px 30px 30px;" />
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </StackPane>
+            <!-- Stack listagem eventos (HOME) -->
+            <StackPane fx:id="stackPaneEventos" prefHeight="768.0" prefWidth="1109.0">
+               <children>
+                  <AnchorPane prefHeight="685.0" prefWidth="997.0">
+                     <children>
+                        <VBox layoutX="51.0" layoutY="16.0" prefHeight="97.0" prefWidth="1000.0" style="-fx-background-color: FFFF; -fx-background-radius: 30px 30px 30px 30px; -fx-border-radius: 30px 30px 30px 30px;">
+                           <children>
+                              <AnchorPane prefHeight="131.0" prefWidth="1116.0">
+                                 <children>
+                                    <Text fill="#ff4136" layoutX="41.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dashboard">
+                                       <font>
+                                          <Font name="System Bold" size="20.0" />
+                                       </font>
+                                    </Text>
+                                    <Separator layoutX="172.0" layoutY="34.0" orientation="VERTICAL" prefHeight="29.0" prefWidth="4.0" style="-fx-border-color: 0000;" />
+                                    <Text layoutX="198.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lista de Eventos">
+                                       <font>
+                                          <Font name="System Bold" size="20.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <ScrollPane layoutX="55.0" layoutY="126.0" prefHeight="568.0" prefWidth="1000.0" style="-fx-background-color: FFFF; -fx-background-radius: 30px 30px 30px 30px; -fx-border-radius: 30px 30px 30px 30px;">
+                           <content>
+                              <AnchorPane prefHeight="695.0" prefWidth="987.0">
+                                 <children>
+                                    <VBox fx:id="eventosContainer" prefHeight="568.0" prefWidth="1000.0" style="-fx-background-color: FFFF; -fx-background-radius: 30px 30px 30px 30px; -fx-border-radius: 30px 30px 30px 30px;" />
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </ScrollPane>
+                        <Button fx:id="adicionarUsuariosButton" layoutX="719.0" layoutY="49.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="128.0" style="-fx-background-color: #FF4136;" text="Adicionar Evento" textFill="WHITE" />
+                        <Button fx:id="removerEventoHome" layoutX="888.0" layoutY="49.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="128.0" style="-fx-background-color: #FF4136;" text="Remover Evento" textFill="WHITE" />
+                        <Separator layoutX="853.0" layoutY="49.0" orientation="VERTICAL" prefHeight="35.0" prefWidth="28.0" style="-fx-border-color: 0000;" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </StackPane>
+            <!-- Stack Admin's -->
+            <StackPane fx:id="stackPaneAdmins" prefHeight="768.0" prefWidth="1109.0">
+               <children>
+                  <AnchorPane prefHeight="685.0" prefWidth="997.0">
+                     <children>
+                        <VBox layoutX="51.0" layoutY="16.0" prefHeight="97.0" prefWidth="1000.0" style="-fx-background-color: FFFF; -fx-background-radius: 30px 30px 30px 30px; -fx-border-radius: 30px 30px 30px 30px;">
+                           <children>
+                              <AnchorPane prefHeight="131.0" prefWidth="1116.0">
+                                 <children>
+                                    <Text fill="#ff4136" layoutX="41.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dashboard">
+                                       <font>
+                                          <Font name="System Bold" size="20.0" />
+                                       </font>
+                                    </Text>
+                                    <Separator layoutX="172.0" layoutY="34.0" orientation="VERTICAL" prefHeight="29.0" prefWidth="4.0" style="-fx-border-color: 0000;" />
+                                    <Text layoutX="198.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lista de Admin's">
+                                       <font>
+                                          <Font name="System Bold" size="20.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <ScrollPane layoutX="55.0" layoutY="126.0" prefHeight="568.0" prefWidth="1000.0" style="-fx-background-color: FFFF; -fx-background-radius: 30px 30px 30px 30px; -fx-border-radius: 30px 30px 30px 30px;">
+                           <content>
+                              <AnchorPane prefHeight="695.0" prefWidth="987.0">
+                                 <children>
+                                    <VBox fx:id="adminsContainer" prefHeight="568.0" prefWidth="1000.0" style="-fx-background-color: FFFF; -fx-background-radius: 30px 30px 30px 30px; -fx-border-radius: 30px 30px 30px 30px;" />
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </StackPane>
+            <!-- Stack adicionar eventos -->
+            <StackPane fx:id="stackPaneAdicionarEventos" prefHeight="768.0" prefWidth="1109.0">
+               <children>
+                  <AnchorPane prefHeight="685.0" prefWidth="997.0">
+                     <children>
+                        <VBox layoutX="51.0" layoutY="16.0" prefHeight="97.0" prefWidth="1000.0" style="-fx-background-color: FFFF; -fx-background-radius: 30px 30px 30px 30px; -fx-border-radius: 30px 30px 30px 30px;">
+                           <children>
+                              <AnchorPane prefHeight="131.0" prefWidth="1116.0">
+                                 <children>
+                                    <Text fill="#ff4136" layoutX="41.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dashboard">
+                                       <font>
+                                          <Font name="System Bold" size="20.0" />
+                                       </font>
+                                    </Text>
+                                    <Separator layoutX="172.0" layoutY="34.0" orientation="VERTICAL" prefHeight="29.0" prefWidth="4.0" style="-fx-border-color: 0000;" />
+                                    <Text layoutX="198.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Adicionar Evento">
+                                       <font>
+                                          <Font name="System Bold" size="20.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="listagemEventos" layoutX="719.0" layoutY="49.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="128.0" style="-fx-background-color: #FF4136;" text="Lista de Eventos" textFill="WHITE" />
+                        <Button fx:id="removerEvento" layoutX="888.0" layoutY="49.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="128.0" style="-fx-background-color: #FF4136;" text="Remover Evento" textFill="WHITE" />
+                        <Separator layoutX="853.0" layoutY="49.0" orientation="VERTICAL" prefHeight="35.0" prefWidth="28.0" style="-fx-border-color: 0000;" />
+                        <AnchorPane layoutX="51.0" layoutY="123.0" prefHeight="572.0" prefWidth="995.0">
+                           <children>
+                              <VBox fx:id="eventosContainer1" layoutX="165.0" layoutY="26.0" prefHeight="52.0" prefWidth="300.0" style="-fx-background-color: FFFF; -fx-background-radius: 30px 30px 30px 30px; -fx-border-radius: 30px 30px 30px 30px;" />
+                              <VBox fx:id="eventosContainer11" layoutX="165.0" layoutY="103.0" prefHeight="87.0" prefWidth="653.0" style="-fx-background-color: FFFF; -fx-background-radius: 30px 30px 30px 30px; -fx-border-radius: 30px 30px 30px 30px;" />
+                              <VBox fx:id="eventosContainer12" layoutX="519.0" layoutY="26.0" prefHeight="52.0" prefWidth="300.0" style="-fx-background-color: FFFF; -fx-background-radius: 30px 30px 30px 30px; -fx-border-radius: 30px 30px 30px 30px;" />
+                              <TextField fx:id="nomeEventoNovo" layoutX="183.0" layoutY="40.0" prefHeight="25.0" prefWidth="265.0" promptText="Nome:" style="-fx-background-color: transparent;" />
+                              <TextField fx:id="dataEventoNovo" layoutX="537.0" layoutY="39.0" prefHeight="25.0" prefWidth="265.0" promptText="Data: dd/mm/yyyy" style="-fx-background-color: transparent;" />
+                              <TextField fx:id="descricaoEventoNovo" layoutX="182.0" layoutY="121.0" prefHeight="52.0" prefWidth="620.0" promptText="Descrição:" style="-fx-background-color: transparent;" />
+                              <VBox fx:id="eventosContainer111" layoutX="166.0" layoutY="208.0" prefHeight="63.0" prefWidth="653.0" style="-fx-background-color: FFFF; -fx-background-radius: 30px 30px 30px 30px; -fx-border-radius: 30px 30px 30px 30px;" />
+                              <TextField fx:id="assentosEventoNovo" layoutX="182.0" layoutY="222.0" prefHeight="37.0" prefWidth="620.0" promptText="Assentos:" style="-fx-background-color: transparent;" />
+                              <Button layoutX="435.0" layoutY="397.0" mnemonicParsing="false" onAction="#criarEvento" prefHeight="35.0" prefWidth="126.0" style="-fx-background-color: #FF4136;" text="Criar" textFill="WHITE" />
+                              <VBox fx:id="eventosContainer13" layoutX="342.0" layoutY="310.0" prefHeight="52.0" prefWidth="300.0" style="-fx-background-color: FFFF; -fx-background-radius: 30px 30px 30px 30px; -fx-border-radius: 30px 30px 30px 30px;" />
+                              <TextField fx:id="idEventoNovo" layoutX="360.0" layoutY="323.0" prefHeight="25.0" prefWidth="265.0" promptText="ID:" style="-fx-background-color: transparent;" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </StackPane>
+            <!-- Stack remover evento -->
+            <StackPane fx:id="stackPaneRemoverEvento" prefHeight="768.0" prefWidth="1109.0">
+               <children>
+                  <AnchorPane prefHeight="685.0" prefWidth="997.0">
+                     <children>
+                        <VBox layoutX="51.0" layoutY="16.0" prefHeight="97.0" prefWidth="1000.0" style="-fx-background-color: FFFF; -fx-background-radius: 30px 30px 30px 30px; -fx-border-radius: 30px 30px 30px 30px;">
+                           <children>
+                              <AnchorPane prefHeight="131.0" prefWidth="1116.0">
+                                 <children>
+                                    <Text fill="#ff4136" layoutX="41.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dashboard">
+                                       <font>
+                                          <Font name="System Bold" size="20.0" />
+                                       </font>
+                                    </Text>
+                                    <Separator layoutX="172.0" layoutY="34.0" orientation="VERTICAL" prefHeight="29.0" prefWidth="4.0" style="-fx-border-color: 0000;" />
+                                    <Text layoutX="198.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Remover Evento">
+                                       <font>
+                                          <Font name="System Bold" size="20.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="listagemEventosRemove" layoutX="719.0" layoutY="49.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="128.0" style="-fx-background-color: #FF4136;" text="Lista de Eventos" textFill="WHITE" />
+                        <Button fx:id="adicionarUsuariosButtonRemove" layoutX="888.0" layoutY="49.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="128.0" style="-fx-background-color: #FF4136;" text="Adicionar Evento" textFill="WHITE" />
+                        <Separator layoutX="853.0" layoutY="49.0" orientation="VERTICAL" prefHeight="35.0" prefWidth="28.0" style="-fx-border-color: 0000;" />
+                        <AnchorPane layoutX="51.0" layoutY="123.0" prefHeight="572.0" prefWidth="995.0">
+                           <children>
+                              <VBox fx:id="removerEventoContainer" layoutX="348.0" layoutY="93.0" prefHeight="52.0" prefWidth="300.0" style="-fx-background-color: FFFF; -fx-background-radius: 30px 30px 30px 30px; -fx-border-radius: 30px 30px 30px 30px;" />
+                              <TextField fx:id="idEvento" layoutX="360.0" layoutY="106.0" prefHeight="25.0" prefWidth="265.0" promptText="ID:" style="-fx-background-color: transparent;" />
+                              <Button layoutX="435.0" layoutY="165.0" mnemonicParsing="false" onAction="#removerEvento" prefHeight="35.0" prefWidth="126.0" style="-fx-background-color: #FF4136;" text="Remover" textFill="WHITE" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </StackPane>
+
+
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
