@@ -6,16 +6,12 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
-import vendaingressos.MainApp;
 import vendaingressos.models.Evento;
 import vendaingressos.models.Ingresso;
 import vendaingressos.models.*;
 import vendaingressos.repository.Repository;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Date;
+
 import java.util.List;
 import java.text.SimpleDateFormat;
 
