@@ -194,8 +194,6 @@ public class HomeUserController {
         stackPaneFeedbacksEventos.setVisible(false);
     }
 
-
-
     private void carregarEventos() {
         try {
             List<Evento> eventos = repository.carregarEventos();
