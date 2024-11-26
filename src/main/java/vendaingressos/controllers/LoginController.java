@@ -57,8 +57,12 @@ public class LoginController {
     }
 
     public static Usuario getUsuarioAtual() {
+        if (usuarioAtual == null) {
+            throw new IllegalStateException("Nenhum usuário está autenticado no momento.");
+        }
         return usuarioAtual;
     }
+
 
     @FXML
     private void goRegister() {

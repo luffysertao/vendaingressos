@@ -30,6 +30,7 @@ public class Usuario {
     public Usuario(String nome, String login, String cpf, String email, String senha) {
         this.login = login;
         this.senha = senha;
+
         this.nome = nome;
         this.cpf = cpf;
         this.email = email;
@@ -173,9 +174,11 @@ public class Usuario {
      *
      * @param pagamento O pagamento a ser adicionado.
      */
+    // Método para adicionar pagamento
     public void adicionarPagamento(Pagamento pagamento) {
-        pagamentos.add(pagamento);
+        this.pagamentos.add(pagamento);
     }
+
 
     /**
      * Remove um pagamento da lista de pagamentos do usuário, caso ele esteja presente.

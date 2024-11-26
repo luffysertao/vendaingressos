@@ -22,12 +22,11 @@ public class Pagamento {
      * @param tipo Tipo de pagamento (ex: "Cartão de Crédito" ou "Boleto").
      * @param nomeTitular Nome do titular do cartão.
      * @param cpf CPF do titular.
-     * @param email Email do titular.
      * @param numeroCartao Número do cartão de crédito.
      * @param validadeCartao Data de validade do cartão (MM/AA).
      * @param codigoSeguranca Código de segurança do cartão (CVV).
      */
-    public Pagamento(String tipo, String nomeTitular, String cpf, String email, String numeroCartao, String validadeCartao, String codigoSeguranca) {
+    public Pagamento(String tipo, String nomeTitular, String cpf, String numeroCartao, String validadeCartao, String codigoSeguranca) {
         this.tipo = tipo;
         this.nomeTitular = nomeTitular;
         this.cpf = cpf;

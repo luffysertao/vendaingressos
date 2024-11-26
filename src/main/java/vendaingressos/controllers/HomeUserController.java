@@ -42,8 +42,6 @@ public class HomeUserController {
     private Button homeButton;
     @FXML
     private Button comprarIngresso;
-    @FXML
-    private Button selecionarButton;
 
     //Adicionar Evento
     @FXML
@@ -94,33 +92,34 @@ public class HomeUserController {
             stackPaneFeedbacksEventos.setVisible(false);
         });
 
-        selecionarButton.setOnAction(event -> {
-            String id = idEvento.getText();
-            try {
-                List<Evento> eventos = repository.carregarEventos();
-                boolean eventoEncontrado = false;
 
-                for (Evento evento : eventos) {
-                    if (evento != null && evento.getId().equals(id)) {
-                        eventoEncontrado = true;
-                        break;
-                    }
+    }
+
+    public void selecionarEvento(){
+        String id = idEvento.getText();
+        try {
+            List<Evento> eventos = repository.carregarEventos();
+            boolean eventoEncontrado = false;
+
+            for (Evento evento : eventos) {
+                if (evento != null && evento.getId().equals(id)) {
+                    eventoEncontrado = true;
+                    break;
                 }
-                if (!eventoEncontrado) {
-                    ErroController.exibirMensagemErro("Erro de Validação", "Evento com ID " + id + " não encontrado.");
-                    return; // Sai do método para evitar execução posterior
-                }
-            } catch (Exception e) {
-                e.printStackTrace();
-                return; // Sai do método se ocorrer uma exceção
             }
+            if (!eventoEncontrado) {
+                ErroController.exibirMensagemErro("Erro de Validação", "Evento com ID " + id + " não encontrado.");
+                return; // Sai do método para evitar execução posterior
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            return; // Sai do método se ocorrer uma exceção
+        }
 
-            stackPaneEventos.setVisible(false);
-            stackPaneSelecionarIngresso.setVisible(false);
-            stackPaneComprarIngresso.setVisible(true);
-            this.metodoPagamento();
-            stackPaneFeedbacksEventos.setVisible(false);
-        });
+        stackPaneEventos.setVisible(false);
+        stackPaneSelecionarIngresso.setVisible(false);
+        stackPaneComprarIngresso.setVisible(true);
+        stackPaneFeedbacksEventos.setVisible(false);
     }
 
     public void metodoPagamento() {
@@ -130,31 +129,29 @@ public class HomeUserController {
         String validade = validadeCartaoCompra.getText();
         String numero = numeroCartaoCompra.getText();
         String cvv = cvvCartaoCompra.getText();
-        String assento = assentoDesejadoCompra.getText();
+        String assentoDes = assentoDesejadoCompra.getText();
         String id = idEvento.getText();
 
         // Valida os campos obrigatórios
-        if (nome.isEmpty() || cpf.isEmpty() || validade.isEmpty() || numero.isEmpty() || cvv.isEmpty() || assento.isEmpty()) {
+        if (nome.isEmpty() || cpf.isEmpty() || validade.isEmpty() || numero.isEmpty() || cvv.isEmpty() || assentoDes.isEmpty()) {
             ErroController.exibirMensagemErro("Erro de Validação", "Todos os campos devem ser preenchidos.");
             return;
         }
 
-        // Cria o pagamento
+        // Pagamento
         Pagamento pagamento = new Pagamento(
                 "Cartão de Crédito", // Tipo de pagamento
                 nome,                // Nome do titular
-                cpf,                 // CPF
-                null,                // Email (opcional)
+                cpf,                 // CPF        // Email (opcional)
                 numero,              // Número do cartão
                 validade,            // Validade do cartão
                 cvv                 // Código de segurança
         );
-
-        // Valida os dados do pagamento
         if (!pagamento.validarCartao()) {
-            System.out.println("Os dados do cartão de crédito são inválidos.");
+            ErroController.exibirMensagemErro("Erro de Validação", "Os dados do cartão de crédito são inválidos.");
             return;
         }
+
 
         // Carrega eventos e encontra o evento correspondente
         Evento eventoIngresso = null;
@@ -165,9 +162,15 @@ public class HomeUserController {
                 break;
             }
         }
-
         if (eventoIngresso == null) {
-            System.out.println("Evento não encontrado. Verifique o ID do evento.");
+            ErroController.exibirMensagemErro("Erro de Validação", "Evento não encontrado. Verifique o ID do evento.");
+            return;
+        }
+
+        // Assentos
+        List<String> assentos = eventoIngresso.getAssentosDisponiveis();
+        if (!assentos.contains(assentoDes)) {
+            ErroController.exibirMensagemErro("Erro de Validação", "O assento desejado não está disponível.");
             return;
         }
 
@@ -176,17 +179,25 @@ public class HomeUserController {
 
         // Associa o pagamento ao usuário e adiciona o ingresso
         Usuario usuario = LoginController.getUsuarioAtual(); // Método para obter o usuário logado
+        System.out.println(usuario);
         if (usuario != null) {
             usuario.adicionarPagamento(pagamento);
-
+            System.out.println("ok1");
             // Cria um ingresso para o assento desejado com preço aleatório
-            Ingresso ingresso = new Ingresso(eventoIngresso, precoAleatorio, assento);
+            Ingresso ingresso = new Ingresso(eventoIngresso, precoAleatorio, assentoDes);
+            System.out.println("ok2");
             usuario.adicionarIngresso(ingresso);
+            System.out.println("ok3");
 
             System.out.println("Pagamento realizado com sucesso! Ingresso adicionado ao usuário.");
         } else {
-            System.out.println("Usuário não encontrado. Por favor, faça login.");
+            ErroController.exibirMensagemErro("Erro de Validação", "Usuário não encontrado. Por favor, faça login.");
         }
+
+        stackPaneEventos.setVisible(true); //alterar para tela de compras
+        stackPaneSelecionarIngresso.setVisible(false);
+        stackPaneComprarIngresso.setVisible(false);
+        stackPaneFeedbacksEventos.setVisible(false);
     }
 
 
