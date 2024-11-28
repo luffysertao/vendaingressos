@@ -4,13 +4,53 @@
     "senha": "12345678",
     "nome": "felipe",
     "cpf": "05116612",
-    "email": "felipe@gmail.com"
+    "email": "felipe@gmail.com",
+    "isAdmin": false
   },
   {
-    "login": "alice",
-    "senha": "amdm246810",
-    "nome": "Alice Moura Dórea de Melo",
-    "cpf": "08515457504",
-    "email": "alidorea@gmail.com"
+    "login": "alice_",
+    "senha": "barril",
+    "nome": "Alice",
+    "cpf": "1632658921",
+    "email": "alice@gmail.com",
+    "isAdmin": false
+  },
+  {
+    "login": "felipeacs_",
+    "senha": "12345678",
+    "nome": "felipe",
+    "cpf": "05116612",
+    "email": "felipe@gmail.com",
+    "isAdmin": false,
+    "ingressos": [
+      {
+        "evento": {
+          "nome": ",mkjbjkb",
+          "descricao": "kjbn",
+          "data": "29/05/2025",
+          "assentos": [
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "isAtivo": true,
+          "id": "123"
+        },
+        "preco": 133.82246024186435,
+        "assento": "A1",
+        "ativo": true
+      }
+    ],
+    "pagamentos": [
+      {
+        "tipo": "Cartão de Crédito",
+        "nomeTitular": "Felipe Amorim",
+        "cpf": "12315112631",
+        "numeroCartao": "2631526321632156",
+        "validadeCartao": "12/20",
+        "codigoSeguranca": "123",
+        "pagamentoConfirmado": true
+      }
+    ]
   }
 ]

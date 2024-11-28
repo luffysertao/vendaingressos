@@ -8,6 +8,7 @@ import vendaingressos.models.*;
 import vendaingressos.repository.Repository;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class LoginController {
@@ -59,6 +60,12 @@ public class LoginController {
     public static Usuario getUsuarioAtual() {
         if (usuarioAtual == null) {
             throw new IllegalStateException("Nenhum usuário está autenticado no momento.");
+        }
+        if(usuarioAtual.getPagamentos() == null){
+            usuarioAtual.pagamentos = new ArrayList<>();
+        }
+        if(usuarioAtual.getIngressos() == null){
+            usuarioAtual.ingressos = new ArrayList<>();
         }
         return usuarioAtual;
     }

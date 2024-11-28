@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9b3aa18b-56db-4856-bd52-f55b454d4316" name="Changes" comment="Initial commit" />
+    <list default="true" id="9b3aa18b-56db-4856-bd52-f55b454d4316" name="Changes" comment="Initial commit">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vendaingressos/controllers/HomeUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vendaingressos/controllers/HomeUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vendaingressos/controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vendaingressos/controllers/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vendaingressos/models/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vendaingressos/models/Usuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vendaingressos/repository/usuarios.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vendaingressos/repository/usuarios.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/homeUser.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/homeUser.fxml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -61,7 +68,7 @@
     &quot;Application.MainApp.executor&quot;: &quot;Run&quot;,
     &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;vendaingressosV2&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Program Files/JetBrains/gson-2.11.0/gson-2.11.0.jar&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,

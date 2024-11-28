@@ -6,12 +6,14 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
+import vendaingressos.MainApp;
 import vendaingressos.models.Evento;
 import vendaingressos.models.Ingresso;
 import vendaingressos.models.*;
 import vendaingressos.repository.Repository;
 
 
+import java.io.IOException;
 import java.util.List;
 import java.text.SimpleDateFormat;
 
@@ -38,6 +40,8 @@ public class HomeUserController {
     private Button homeButton;
     @FXML
     private Button comprarIngresso;
+    @FXML
+    private Button listagemEventos;
 
     //Adicionar Evento
     @FXML
@@ -58,6 +62,7 @@ public class HomeUserController {
 
     private final Repository repository;
     private List<Evento> eventos;
+    private List<Usuario> usuarios;
 
     public HomeUserController() {
         this.repository = new Repository();
@@ -66,6 +71,8 @@ public class HomeUserController {
 
     @FXML
     public void initialize() {
+
+        usuarios = repository.carregarUsuarios();
         stackPaneEventos.setVisible(true);
         stackPaneComprarIngresso.setVisible(false);
         stackPaneFeedbacksEventos.setVisible(false);
@@ -88,6 +95,13 @@ public class HomeUserController {
             stackPaneFeedbacksEventos.setVisible(false);
         });
 
+        listagemEventos.setOnAction(event -> {
+            stackPaneEventos.setVisible(true);
+            stackPaneSelecionarIngresso.setVisible(false);
+            stackPaneComprarIngresso.setVisible(false);
+            stackPaneFeedbacksEventos.setVisible(false);
+
+        });
 
     }
 
@@ -188,6 +202,9 @@ public class HomeUserController {
         } else {
             ErroController.exibirMensagemErro("Erro de Validação", "Usuário não encontrado. Por favor, faça login.");
         }
+
+        usuarios.add(usuario);
+        repository.salvarUsuarios(usuarios);
         stackPaneEventos.setVisible(true); //alterar para tela de compras
         stackPaneSelecionarIngresso.setVisible(false);
         stackPaneComprarIngresso.setVisible(false);
@@ -232,6 +249,15 @@ public class HomeUserController {
             }
         } catch (Exception e) {
             System.err.println("Erro ao carregar eventos: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void goLogin(){
+        try {
+            MainApp.showLoginScreen();
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }

@@ -12,8 +12,8 @@ public class Usuario {
     private String cpf; // CPF do usuário
     private String email; // Email do usuário
     public boolean isAdmin; // Indica se o usuário é um administrador
-    private List<Ingresso> ingressos; // Lista de ingressos comprados pelo usuário
-    private List<Pagamento> pagamentos; // Lista de pagamentos realizados pelo usuário
+    public List<Ingresso> ingressos; // Lista de ingressos comprados pelo usuário
+    public List<Pagamento> pagamentos; // Lista de pagamentos realizados pelo usuário
 
     /**
      * Construtor para inicializar um novo usuário.
