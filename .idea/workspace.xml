@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9b3aa18b-56db-4856-bd52-f55b454d4316" name="Changes" comment="Initial commit" />
+    <list default="true" id="9b3aa18b-56db-4856-bd52-f55b454d4316" name="Changes" comment="Initial commit">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vendaingressos/controllers/HomeUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vendaingressos/controllers/HomeUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vendaingressos/repository/usuarios.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vendaingressos/repository/usuarios.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -256,7 +260,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732837816512</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Initial commit">
+      <option name="closed" value="true" />
+      <created>1732837867273</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1732837867274</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

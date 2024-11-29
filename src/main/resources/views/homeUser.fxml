@@ -149,7 +149,7 @@
                               </AnchorPane>
                            </content>
                         </ScrollPane>
-                        <Button fx:id="adicionarUsuariosButton" layoutX="719.0" layoutY="49.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="128.0" style="-fx-background-color: #FF4136;" text="FeedBacks" textFill="WHITE" />
+                        <Button fx:id="feedbackButton1" layoutX="719.0" layoutY="49.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="128.0" style="-fx-background-color: #FF4136;" text="FeedBacks" textFill="WHITE" />
                         <Button  fx:id="comprarIngresso" layoutX="888.0" layoutY="49.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="128.0" style="-fx-background-color: #FF4136;" text="Comprar Ingresso" textFill="WHITE" />
                         <Separator layoutX="853.0" layoutY="49.0" orientation="VERTICAL" prefHeight="35.0" prefWidth="28.0" style="-fx-border-color: 0000;" />
                      </children>
@@ -221,7 +221,7 @@
                   <AnchorPane prefHeight="200.0" prefWidth="200.0">
                      <children>
                         <Button fx:id="listagemEventosRemove" layoutX="719.0" layoutY="49.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="128.0" style="-fx-background-color: #FF4136;" text="Lista de Eventos" textFill="WHITE" />
-                        <Button fx:id="adicionarUsuariosButtonRemove" layoutX="888.0" layoutY="49.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="128.0" style="-fx-background-color: #FF4136;" text="FeedBacks" textFill="WHITE" />
+                        <Button fx:id="feedbackButton2" layoutX="888.0" layoutY="49.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="128.0" style="-fx-background-color: #FF4136;" text="FeedBacks" textFill="WHITE" />
                         <Separator layoutX="853.0" layoutY="49.0" orientation="VERTICAL" prefHeight="35.0" prefWidth="28.0" style="-fx-border-color: 0000;" />
                         <AnchorPane layoutX="51.0" layoutY="123.0" prefHeight="572.0" prefWidth="995.0">
                            <children>
@@ -263,7 +263,7 @@
                   <AnchorPane prefHeight="200.0" prefWidth="200.0">
                      <children>
                         <Button fx:id="listagemEventosRemove1" layoutX="719.0" layoutY="49.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="128.0" style="-fx-background-color: #FF4136;" text="Lista de Eventos" textFill="WHITE" />
-                        <Button fx:id="adicionarUsuariosButtonRemove1" layoutX="888.0" layoutY="49.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="128.0" style="-fx-background-color: #FF4136;" text="FeedBacks" textFill="WHITE" />
+                        <Button fx:id="feedbackButton3" layoutX="888.0" layoutY="49.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="128.0" style="-fx-background-color: #FF4136;" text="FeedBacks" textFill="WHITE" />
                         <Separator layoutX="853.0" layoutY="49.0" orientation="VERTICAL" prefHeight="35.0" prefWidth="28.0" style="-fx-border-color: 0000;" />
                         <AnchorPane layoutX="51.0" layoutY="123.0" prefHeight="572.0" prefWidth="995.0">
                            <children>

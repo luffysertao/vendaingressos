@@ -42,6 +42,14 @@ public class HomeUserController {
     private Button comprarIngresso;
     @FXML
     private Button listagemEventos;
+    @FXML
+    private Button listagemEventosRemove;
+    @FXML
+    private Button feedbackButton1;
+    @FXML
+    private Button feedbackButton2;
+    @FXML
+    private Button feedbackButton3;
 
     //Adicionar Evento
     @FXML
@@ -101,6 +109,35 @@ public class HomeUserController {
             stackPaneComprarIngresso.setVisible(false);
             stackPaneFeedbacksEventos.setVisible(false);
 
+        });
+
+        listagemEventosRemove.setOnAction(event -> {
+            stackPaneEventos.setVisible(true);
+            stackPaneSelecionarIngresso.setVisible(false);
+            stackPaneComprarIngresso.setVisible(false);
+            stackPaneFeedbacksEventos.setVisible(false);
+
+        });
+
+        feedbackButton1.setOnAction(event -> {
+            stackPaneEventos.setVisible(false);
+            stackPaneSelecionarIngresso.setVisible(false);
+            stackPaneComprarIngresso.setVisible(false);
+            stackPaneFeedbacksEventos.setVisible(true);
+        });
+
+        feedbackButton2.setOnAction(event -> {
+            stackPaneEventos.setVisible(false);
+            stackPaneSelecionarIngresso.setVisible(false);
+            stackPaneComprarIngresso.setVisible(false);
+            stackPaneFeedbacksEventos.setVisible(true);
+        });
+
+        feedbackButton3.setOnAction(event -> {
+            stackPaneEventos.setVisible(false);
+            stackPaneSelecionarIngresso.setVisible(false);
+            stackPaneComprarIngresso.setVisible(false);
+            stackPaneFeedbacksEventos.setVisible(true);
         });
 
     }
@@ -188,27 +225,44 @@ public class HomeUserController {
         double precoAleatorio = 50.0 + (Math.random() * (200.0 - 50.0));
 
         // Associa o pagamento ao usuário e adiciona o ingresso
-        Usuario usuario = LoginController.getUsuarioAtual(); // Método para obter o usuário logado
-        System.out.println(usuario);
+        Usuario usuario = LoginController.getUsuarioAtual(); // Obtém o usuário logado
         if (usuario != null) {
+            // Atualiza os dados do usuário logado
             usuario.adicionarPagamento(pagamento);
-            System.out.println("ok1");
+            System.out.println("Pagamento adicionado com sucesso!");
             Ingresso ingresso = new Ingresso(eventoIngresso, precoAleatorio, assentoDes);
-            System.out.println("ok2");
             usuario.adicionarIngresso(ingresso);
-            System.out.println("ok3");
+            System.out.println("Ingresso adicionado com sucesso!");
 
-            System.out.println("Pagamento realizado com sucesso! Ingresso adicionado ao usuário.");
+            // Atualiza a lista de usuários, substituindo o usuário existente
+            boolean usuarioAtualizado = false;
+            for (int i = 0; i < usuarios.size(); i++) {
+                if (usuarios.get(i).getCpf().equals(usuario.getCpf())) { // Comparação pelo CPF como identificador único
+                    usuarios.set(i, usuario); // Substitui o usuário na lista
+                    usuarioAtualizado = true;
+                    break;
+                }
+            }
+
+            if (!usuarioAtualizado) {
+                // Caso o usuário não seja encontrado (o que não deveria acontecer)
+                usuarios.add(usuario);
+            }
+
+            // Salva a lista de usuários atualizada no JSON
+            repository.salvarUsuarios(usuarios);
+
+            // Alteração de telas (mantém o fluxo original)
+            stackPaneEventos.setVisible(true);
+            stackPaneSelecionarIngresso.setVisible(false);
+            stackPaneComprarIngresso.setVisible(false);
+            stackPaneFeedbacksEventos.setVisible(false);
+
+            System.out.println("Dados salvos com sucesso!");
         } else {
             ErroController.exibirMensagemErro("Erro de Validação", "Usuário não encontrado. Por favor, faça login.");
         }
 
-        usuarios.add(usuario);
-        repository.salvarUsuarios(usuarios);
-        stackPaneEventos.setVisible(true); //alterar para tela de compras
-        stackPaneSelecionarIngresso.setVisible(false);
-        stackPaneComprarIngresso.setVisible(false);
-        stackPaneFeedbacksEventos.setVisible(false);
     }
 
     private void carregarEventos() {

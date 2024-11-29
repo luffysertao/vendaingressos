@@ -5,22 +5,6 @@
     "nome": "felipe",
     "cpf": "05116612",
     "email": "felipe@gmail.com",
-    "isAdmin": false
-  },
-  {
-    "login": "alice_",
-    "senha": "barril",
-    "nome": "Alice",
-    "cpf": "1632658921",
-    "email": "alice@gmail.com",
-    "isAdmin": false
-  },
-  {
-    "login": "felipeacs_",
-    "senha": "12345678",
-    "nome": "felipe",
-    "cpf": "05116612",
-    "email": "felipe@gmail.com",
     "isAdmin": false,
     "ingressos": [
       {
@@ -36,18 +20,82 @@
           "isAtivo": true,
           "id": "123"
         },
-        "preco": 133.82246024186435,
+        "preco": 178.3229543366884,
         "assento": "A1",
+        "ativo": true
+      },
+      {
+        "evento": {
+          "nome": ",mkjbjkb",
+          "descricao": "kjbn",
+          "data": "29/05/2025",
+          "assentos": [
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "isAtivo": true,
+          "id": "123"
+        },
+        "preco": 194.03918095055917,
+        "assento": "A3",
         "ativo": true
       }
     ],
     "pagamentos": [
       {
         "tipo": "Cartão de Crédito",
-        "nomeTitular": "Felipe Amorim",
-        "cpf": "12315112631",
-        "numeroCartao": "2631526321632156",
-        "validadeCartao": "12/20",
+        "nomeTitular": "asdasd",
+        "cpf": "12345678914",
+        "numeroCartao": "1235216321563215",
+        "validadeCartao": "02/12",
+        "codigoSeguranca": "123",
+        "pagamentoConfirmado": true
+      },
+      {
+        "tipo": "Cartão de Crédito",
+        "nomeTitular": "asd",
+        "cpf": "12345678925",
+        "numeroCartao": "1234567891234567",
+        "validadeCartao": "09/11",
+        "codigoSeguranca": "165",
+        "pagamentoConfirmado": true
+      }
+    ]
+  },
+  {
+    "login": "alice_",
+    "senha": "barril",
+    "nome": "Alice",
+    "cpf": "1632658921",
+    "email": "alice@gmail.com",
+    "isAdmin": false,
+    "ingressos": [
+      {
+        "evento": {
+          "nome": ",mkjbjkb",
+          "descricao": "kjbn",
+          "data": "29/05/2025",
+          "assentos": [
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "isAtivo": true,
+          "id": "123"
+        },
+        "preco": 178.6331395759695,
+        "assento": "A2",
+        "ativo": true
+      }
+    ],
+    "pagamentos": [
+      {
+        "tipo": "Cartão de Crédito",
+        "nomeTitular": "asdasd",
+        "cpf": "12345678912",
+        "numeroCartao": "1234567891234567",
+        "validadeCartao": "12/11",
         "codigoSeguranca": "123",
         "pagamentoConfirmado": true
       }
