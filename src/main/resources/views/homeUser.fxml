@@ -94,10 +94,10 @@
                      </font>
                   </Text>
                   <FontAwesomeIcon fill="#ff4136" glyphName="ARROW_LEFT" layoutX="34.0" layoutY="59.0" size="2em" text="" />
-                  <Hyperlink onAction="#goLogin" layoutX="23.0" layoutY="27.0" prefHeight="50.0" prefWidth="93.0" />
+                  <Hyperlink layoutX="23.0" layoutY="27.0" onAction="#goLogin" prefHeight="50.0" prefWidth="93.0" />
                </children>
             </AnchorPane>
-            <Button fx:id="usuariosButton" layoutX="48.0" layoutY="376.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="164.0" style="-fx-background-color: transparent;" />
+            <Button fx:id="ingressosButton" layoutX="48.0" layoutY="376.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="164.0" style="-fx-background-color: transparent;" />
             <Button fx:id="homeButton" layoutX="49.0" layoutY="316.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="128.0" style="-fx-background-color: transparent;" />
             <Text layoutX="111.0" layoutY="725.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Omrac" />
             <ImageView fitHeight="16.0" fitWidth="17.0" layoutX="91.0" layoutY="712.0" pickOnBounds="true" preserveRatio="true">
@@ -150,7 +150,7 @@
                            </content>
                         </ScrollPane>
                         <Button fx:id="feedbackButton1" layoutX="719.0" layoutY="49.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="128.0" style="-fx-background-color: #FF4136;" text="FeedBacks" textFill="WHITE" />
-                        <Button  fx:id="comprarIngresso" layoutX="888.0" layoutY="49.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="128.0" style="-fx-background-color: #FF4136;" text="Comprar Ingresso" textFill="WHITE" />
+                        <Button fx:id="comprarIngresso" layoutX="888.0" layoutY="49.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="128.0" style="-fx-background-color: #FF4136;" text="Comprar Ingresso" textFill="WHITE" />
                         <Separator layoutX="853.0" layoutY="49.0" orientation="VERTICAL" prefHeight="35.0" prefWidth="28.0" style="-fx-border-color: 0000;" />
                      </children>
                   </AnchorPane>
@@ -185,7 +185,7 @@
                   <AnchorPane prefHeight="200.0" prefWidth="200.0">
                      <children>
                         <Button fx:id="listagemEventos" layoutX="719.0" layoutY="49.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="128.0" style="-fx-background-color: #FF4136;" text="Lista de Eventos" textFill="WHITE" />
-                        <Button fx:id="removerEvento" layoutX="888.0" layoutY="49.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="128.0" style="-fx-background-color: #FF4136;" text="Compra Ingresso" textFill="WHITE" />
+                        <Button fx:id="comprarIngressoFeedback" layoutX="888.0" layoutY="49.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="128.0" style="-fx-background-color: #FF4136;" text="Compra Ingresso" textFill="WHITE" />
                         <Separator layoutX="853.0" layoutY="49.0" orientation="VERTICAL" prefHeight="35.0" prefWidth="28.0" style="-fx-border-color: 0000;" />
                      </children>
                   </AnchorPane>
@@ -227,7 +227,7 @@
                            <children>
                               <VBox fx:id="removerEventoContainer" layoutX="348.0" layoutY="93.0" prefHeight="52.0" prefWidth="300.0" style="-fx-background-color: FFFF; -fx-background-radius: 30px 30px 30px 30px; -fx-border-radius: 30px 30px 30px 30px;" />
                               <TextField fx:id="idEvento" layoutX="360.0" layoutY="106.0" prefHeight="25.0" prefWidth="265.0" promptText="ID:" style="-fx-background-color: transparent;" />
-                              <Button onAction="#selecionarEvento" layoutX="435.0" layoutY="165.0" mnemonicParsing="false"  prefHeight="35.0" prefWidth="126.0" style="-fx-background-color: #FF4136;" text="Selecionar" textFill="WHITE" />
+                              <Button layoutX="435.0" layoutY="165.0" mnemonicParsing="false" onAction="#selecionarEvento" prefHeight="35.0" prefWidth="126.0" style="-fx-background-color: #FF4136;" text="Selecionar" textFill="WHITE" />
                            </children>
                         </AnchorPane>
                      </children>
@@ -267,7 +267,7 @@
                         <Separator layoutX="853.0" layoutY="49.0" orientation="VERTICAL" prefHeight="35.0" prefWidth="28.0" style="-fx-border-color: 0000;" />
                         <AnchorPane layoutX="51.0" layoutY="123.0" prefHeight="572.0" prefWidth="995.0">
                            <children>
-                              <Button onAction="#metodoPagamento" layoutX="697.0" layoutY="448.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="126.0" style="-fx-background-color: #FF4136;" text="Finalizar compra" textFill="WHITE" />
+                              <Button layoutX="697.0" layoutY="448.0" mnemonicParsing="false" onAction="#metodoPagamento" prefHeight="35.0" prefWidth="126.0" style="-fx-background-color: #FF4136;" text="Finalizar compra" textFill="WHITE" />
                               <VBox fx:id="removerEventoContainer11" layoutX="604.0" layoutY="89.0" prefHeight="52.0" prefWidth="300.0" style="-fx-background-color: FFFF; -fx-background-radius: 30px 30px 30px 30px; -fx-border-radius: 30px 30px 30px 30px;">
                                  <children>
                                     <AnchorPane prefHeight="200.0" prefWidth="200.0">
@@ -330,6 +330,47 @@
                               </VBox>
                            </children>
                         </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </StackPane>
+            <!-- StackPane ingressos comprados-->
+            <StackPane fx:id="ingressosComprados" prefHeight="768.0" prefWidth="1109.0">
+               <children>
+                  <AnchorPane prefHeight="685.0" prefWidth="997.0">
+                     <children>
+                        <VBox layoutX="51.0" layoutY="16.0" prefHeight="97.0" prefWidth="1000.0" style="-fx-background-color: FFFF; -fx-background-radius: 30px 30px 30px 30px; -fx-border-radius: 30px 30px 30px 30px;">
+                           <children>
+                              <AnchorPane prefHeight="131.0" prefWidth="1116.0">
+                                 <children>
+                                    <Text fill="#ff4136" layoutX="41.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dashboard">
+                                       <font>
+                                          <Font name="System Bold" size="20.0" />
+                                       </font>
+                                    </Text>
+                                    <Separator layoutX="172.0" layoutY="34.0" orientation="VERTICAL" prefHeight="29.0" prefWidth="4.0" style="-fx-border-color: 0000;" />
+                                    <Text layoutX="198.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ingressos comprados">
+                                       <font>
+                                          <Font name="System Bold" size="20.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <ScrollPane layoutX="55.0" layoutY="126.0" prefHeight="568.0" prefWidth="1000.0" style="-fx-background-color: FFFF; -fx-background-radius: 30px 30px 30px 30px; -fx-border-radius: 30px 30px 30px 30px;">
+                           <content>
+                              <AnchorPane prefHeight="695.0" prefWidth="987.0">
+                                 <children>
+                                    <VBox fx:id="eventosContainer1" prefHeight="568.0" prefWidth="1000.0" style="-fx-background-color: FFFF; -fx-background-radius: 30px 30px 30px 30px; -fx-border-radius: 30px 30px 30px 30px;" />
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </ScrollPane>
                      </children>
                   </AnchorPane>
                </children>

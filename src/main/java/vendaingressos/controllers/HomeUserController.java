@@ -33,6 +33,8 @@ public class HomeUserController {
     private StackPane stackPaneSelecionarIngresso;
     @FXML
     private StackPane stackPaneComprarIngresso;
+    @FXML
+    private StackPane ingressosComprados;
     //--
 
     //Buttons
@@ -50,6 +52,10 @@ public class HomeUserController {
     private Button feedbackButton2;
     @FXML
     private Button feedbackButton3;
+    @FXML
+    private Button comprarIngressoFeedback;
+    @FXML
+    private Button ingressosButton;
 
     //Adicionar Evento
     @FXML
@@ -85,6 +91,7 @@ public class HomeUserController {
         stackPaneComprarIngresso.setVisible(false);
         stackPaneFeedbacksEventos.setVisible(false);
         stackPaneSelecionarIngresso.setVisible(false);
+        ingressosComprados.setVisible(false);
 
         carregarEventos();
 
@@ -93,7 +100,7 @@ public class HomeUserController {
             stackPaneSelecionarIngresso.setVisible(false);
             stackPaneComprarIngresso.setVisible(false);
             stackPaneFeedbacksEventos.setVisible(false);
-
+            ingressosComprados.setVisible(false);
         });
 
         comprarIngresso.setOnAction(event -> {
@@ -101,6 +108,7 @@ public class HomeUserController {
             stackPaneSelecionarIngresso.setVisible(true);
             stackPaneComprarIngresso.setVisible(false);
             stackPaneFeedbacksEventos.setVisible(false);
+            ingressosComprados.setVisible(false);
         });
 
         listagemEventos.setOnAction(event -> {
@@ -108,7 +116,7 @@ public class HomeUserController {
             stackPaneSelecionarIngresso.setVisible(false);
             stackPaneComprarIngresso.setVisible(false);
             stackPaneFeedbacksEventos.setVisible(false);
-
+            ingressosComprados.setVisible(false);
         });
 
         listagemEventosRemove.setOnAction(event -> {
@@ -116,7 +124,7 @@ public class HomeUserController {
             stackPaneSelecionarIngresso.setVisible(false);
             stackPaneComprarIngresso.setVisible(false);
             stackPaneFeedbacksEventos.setVisible(false);
-
+            ingressosComprados.setVisible(false);
         });
 
         feedbackButton1.setOnAction(event -> {
@@ -124,6 +132,7 @@ public class HomeUserController {
             stackPaneSelecionarIngresso.setVisible(false);
             stackPaneComprarIngresso.setVisible(false);
             stackPaneFeedbacksEventos.setVisible(true);
+            ingressosComprados.setVisible(false);
         });
 
         feedbackButton2.setOnAction(event -> {
@@ -131,6 +140,7 @@ public class HomeUserController {
             stackPaneSelecionarIngresso.setVisible(false);
             stackPaneComprarIngresso.setVisible(false);
             stackPaneFeedbacksEventos.setVisible(true);
+            ingressosComprados.setVisible(false);
         });
 
         feedbackButton3.setOnAction(event -> {
@@ -138,6 +148,31 @@ public class HomeUserController {
             stackPaneSelecionarIngresso.setVisible(false);
             stackPaneComprarIngresso.setVisible(false);
             stackPaneFeedbacksEventos.setVisible(true);
+            ingressosComprados.setVisible(false);
+        });
+
+        comprarIngressoFeedback.setOnAction(event -> {
+            stackPaneEventos.setVisible(true);
+            stackPaneSelecionarIngresso.setVisible(false);
+            stackPaneComprarIngresso.setVisible(false);
+            stackPaneFeedbacksEventos.setVisible(false);
+            ingressosComprados.setVisible(false);
+        });
+
+        comprarIngressoFeedback.setOnAction(event -> {
+            stackPaneEventos.setVisible(true);
+            stackPaneSelecionarIngresso.setVisible(false);
+            stackPaneComprarIngresso.setVisible(false);
+            stackPaneFeedbacksEventos.setVisible(false);
+            ingressosComprados.setVisible(false);
+        });
+
+        ingressosButton.setOnAction(event -> {
+            stackPaneEventos.setVisible(false);
+            stackPaneSelecionarIngresso.setVisible(false);
+            stackPaneComprarIngresso.setVisible(false);
+            stackPaneFeedbacksEventos.setVisible(false);
+            ingressosComprados.setVisible(true);
         });
 
     }

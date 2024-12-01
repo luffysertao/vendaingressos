@@ -65,7 +65,7 @@
   },
   {
     "login": "alice_",
-    "senha": "barril",
+    "senha": "12345678",
     "nome": "Alice",
     "cpf": "1632658921",
     "email": "alice@gmail.com",
@@ -87,6 +87,23 @@
         "preco": 178.6331395759695,
         "assento": "A2",
         "ativo": true
+      },
+      {
+        "evento": {
+          "nome": ",mkjbjkb",
+          "descricao": "kjbn",
+          "data": "29/05/2025",
+          "assentos": [
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "isAtivo": true,
+          "id": "123"
+        },
+        "preco": 82.85302747939915,
+        "assento": "A1",
+        "ativo": true
       }
     ],
     "pagamentos": [
@@ -97,6 +114,15 @@
         "numeroCartao": "1234567891234567",
         "validadeCartao": "12/11",
         "codigoSeguranca": "123",
+        "pagamentoConfirmado": true
+      },
+      {
+        "tipo": "Cartão de Crédito",
+        "nomeTitular": "Alice ",
+        "cpf": "14780235761",
+        "numeroCartao": "2451376481572461",
+        "validadeCartao": "04/30",
+        "codigoSeguranca": "345",
         "pagamentoConfirmado": true
       }
     ]
