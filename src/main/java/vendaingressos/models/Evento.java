@@ -19,7 +19,7 @@ public class Evento {
     private List<String> assentos;
     private boolean isAtivo;
     private String id;
-//    private List<Feedback> feedbacks;
+    private List<Feedback> feedbacks;
 
     /**
      * Construtor para inicializar um novo evento.
@@ -35,7 +35,7 @@ public class Evento {
         this.assentos = new ArrayList<>();
         this.isAtivo = true;
         this.id = id;
-//        this.feedbacks = new ArrayList<>();
+        this.feedbacks = new ArrayList<>();
     }
 
     /**
@@ -147,9 +147,9 @@ public class Evento {
      *
      * @return A lista de feedbacks.
      */
-//    public List<Feedback> getFeedbacks() {
-//        return feedbacks;
-//    }
+    public List<Feedback> getFeedbacks() {
+        return feedbacks;
+    }
 
     /**
      * Adiciona um feedback ao evento. O feedback só é adicionado se
@@ -157,21 +157,25 @@ public class Evento {
      *
      * @param feedback O feedback a ser adicionado.
      */
-//    public void adicionarFeedback(Feedback feedback) {
-//        String comentario = feedback.getComentario();
-//        if (!feedback.validarComentario(comentario)) {
-//            feedbacks.add(feedback);
-//        }
-//    }
-//
-//    /**
-//     * Remove um feedback do evento.
-//     *
-//     * @param feedback O feedback a ser removido.
-//     */
-//    public void removerFeedback(Feedback feedback) {
-//        feedbacks.remove(feedback);
-//    }
+    public void adicionarFeedback(Feedback feedback) {
+        String comentario = feedback.getComentario();
+        feedbacks.add(feedback);
+
+    }
+
+    /**
+     * Remove um feedback do evento.
+     *
+     * @param feedback O feedback a ser removido.
+     */
+    public void removerFeedback(Feedback feedback) {
+        feedbacks.remove(feedback);
+    }
+
+    public void setFeedbacks(List<Feedback> feedbacks) {
+        this.feedbacks = feedbacks;
+    }
+
 }
 
 /*******************************

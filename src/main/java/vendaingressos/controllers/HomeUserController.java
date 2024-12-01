@@ -14,6 +14,8 @@ import vendaingressos.repository.Repository;
 
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.text.SimpleDateFormat;
 
@@ -22,7 +24,10 @@ public class HomeUserController {
     //Containers
     @FXML
     private VBox eventosContainer; // Container para eventos
-    //--
+    @FXML
+    private VBox ingressosContainer;
+    @FXML
+    private VBox feedbacksContainer;
 
     //Stacks da Home
     @FXML
@@ -34,7 +39,11 @@ public class HomeUserController {
     @FXML
     private StackPane stackPaneComprarIngresso;
     @FXML
-    private StackPane ingressosComprados;
+    private StackPane stackPaneIngressosComprados;
+    @FXML
+    private StackPane stackPaneAdicionarFeedback;
+    @FXML
+    private StackPane stackPaneComentarFeedback;
     //--
 
     //Buttons
@@ -43,7 +52,7 @@ public class HomeUserController {
     @FXML
     private Button comprarIngresso;
     @FXML
-    private Button listagemEventos;
+    private Button listagemEventosFeedback;
     @FXML
     private Button listagemEventosRemove;
     @FXML
@@ -56,6 +65,10 @@ public class HomeUserController {
     private Button comprarIngressoFeedback;
     @FXML
     private Button ingressosButton;
+    @FXML
+    private Button listagemEventosCompra;
+    @FXML
+    private Button adicionarFeedback;
 
     //Adicionar Evento
     @FXML
@@ -72,6 +85,10 @@ public class HomeUserController {
     private TextField assentoDesejadoCompra;
     @FXML
     private TextField idEvento;
+    @FXML
+    private TextField comentario;
+    @FXML
+    private TextField idEventoFeedback;
     //--
 
     private final Repository repository;
@@ -91,8 +108,9 @@ public class HomeUserController {
         stackPaneComprarIngresso.setVisible(false);
         stackPaneFeedbacksEventos.setVisible(false);
         stackPaneSelecionarIngresso.setVisible(false);
-        ingressosComprados.setVisible(false);
-
+        stackPaneIngressosComprados.setVisible(false);
+        stackPaneAdicionarFeedback.setVisible(false);
+        stackPaneComentarFeedback.setVisible(false);
         carregarEventos();
 
         homeButton.setOnAction(event -> {
@@ -100,7 +118,9 @@ public class HomeUserController {
             stackPaneSelecionarIngresso.setVisible(false);
             stackPaneComprarIngresso.setVisible(false);
             stackPaneFeedbacksEventos.setVisible(false);
-            ingressosComprados.setVisible(false);
+            stackPaneIngressosComprados.setVisible(false);
+            stackPaneAdicionarFeedback.setVisible(false);
+            stackPaneComentarFeedback.setVisible(false);
         });
 
         comprarIngresso.setOnAction(event -> {
@@ -108,15 +128,19 @@ public class HomeUserController {
             stackPaneSelecionarIngresso.setVisible(true);
             stackPaneComprarIngresso.setVisible(false);
             stackPaneFeedbacksEventos.setVisible(false);
-            ingressosComprados.setVisible(false);
+            stackPaneIngressosComprados.setVisible(false);
+            stackPaneAdicionarFeedback.setVisible(false);
+            stackPaneComentarFeedback.setVisible(false);
         });
 
-        listagemEventos.setOnAction(event -> {
+        listagemEventosFeedback.setOnAction(event -> {
             stackPaneEventos.setVisible(true);
             stackPaneSelecionarIngresso.setVisible(false);
             stackPaneComprarIngresso.setVisible(false);
             stackPaneFeedbacksEventos.setVisible(false);
-            ingressosComprados.setVisible(false);
+            stackPaneIngressosComprados.setVisible(false);
+            stackPaneAdicionarFeedback.setVisible(false);
+            stackPaneComentarFeedback.setVisible(false);
         });
 
         listagemEventosRemove.setOnAction(event -> {
@@ -124,7 +148,9 @@ public class HomeUserController {
             stackPaneSelecionarIngresso.setVisible(false);
             stackPaneComprarIngresso.setVisible(false);
             stackPaneFeedbacksEventos.setVisible(false);
-            ingressosComprados.setVisible(false);
+            stackPaneIngressosComprados.setVisible(false);
+            stackPaneAdicionarFeedback.setVisible(false);
+            stackPaneComentarFeedback.setVisible(false);
         });
 
         feedbackButton1.setOnAction(event -> {
@@ -132,7 +158,10 @@ public class HomeUserController {
             stackPaneSelecionarIngresso.setVisible(false);
             stackPaneComprarIngresso.setVisible(false);
             stackPaneFeedbacksEventos.setVisible(true);
-            ingressosComprados.setVisible(false);
+            stackPaneIngressosComprados.setVisible(false);
+            stackPaneAdicionarFeedback.setVisible(false);
+            stackPaneComentarFeedback.setVisible(false);
+            carregarFeedbacks();
         });
 
         feedbackButton2.setOnAction(event -> {
@@ -140,7 +169,10 @@ public class HomeUserController {
             stackPaneSelecionarIngresso.setVisible(false);
             stackPaneComprarIngresso.setVisible(false);
             stackPaneFeedbacksEventos.setVisible(true);
-            ingressosComprados.setVisible(false);
+            stackPaneIngressosComprados.setVisible(false);
+            stackPaneAdicionarFeedback.setVisible(false);
+            stackPaneComentarFeedback.setVisible(false);
+            carregarFeedbacks();
         });
 
         feedbackButton3.setOnAction(event -> {
@@ -148,23 +180,20 @@ public class HomeUserController {
             stackPaneSelecionarIngresso.setVisible(false);
             stackPaneComprarIngresso.setVisible(false);
             stackPaneFeedbacksEventos.setVisible(true);
-            ingressosComprados.setVisible(false);
+            stackPaneIngressosComprados.setVisible(false);
+            stackPaneAdicionarFeedback.setVisible(false);
+            stackPaneComentarFeedback.setVisible(false);
+            carregarFeedbacks();
         });
 
         comprarIngressoFeedback.setOnAction(event -> {
-            stackPaneEventos.setVisible(true);
-            stackPaneSelecionarIngresso.setVisible(false);
+            stackPaneEventos.setVisible(false);
+            stackPaneSelecionarIngresso.setVisible(true);
             stackPaneComprarIngresso.setVisible(false);
             stackPaneFeedbacksEventos.setVisible(false);
-            ingressosComprados.setVisible(false);
-        });
-
-        comprarIngressoFeedback.setOnAction(event -> {
-            stackPaneEventos.setVisible(true);
-            stackPaneSelecionarIngresso.setVisible(false);
-            stackPaneComprarIngresso.setVisible(false);
-            stackPaneFeedbacksEventos.setVisible(false);
-            ingressosComprados.setVisible(false);
+            stackPaneIngressosComprados.setVisible(false);
+            stackPaneAdicionarFeedback.setVisible(false);
+            stackPaneComentarFeedback.setVisible(false);
         });
 
         ingressosButton.setOnAction(event -> {
@@ -172,7 +201,30 @@ public class HomeUserController {
             stackPaneSelecionarIngresso.setVisible(false);
             stackPaneComprarIngresso.setVisible(false);
             stackPaneFeedbacksEventos.setVisible(false);
-            ingressosComprados.setVisible(true);
+            stackPaneIngressosComprados.setVisible(true);
+            stackPaneAdicionarFeedback.setVisible(false);
+            stackPaneComentarFeedback.setVisible(false);
+            carregarIngressos();
+        });
+
+        listagemEventosCompra.setOnAction(event -> {
+            stackPaneEventos.setVisible(true);
+            stackPaneSelecionarIngresso.setVisible(false);
+            stackPaneComprarIngresso.setVisible(false);
+            stackPaneFeedbacksEventos.setVisible(false);
+            stackPaneIngressosComprados.setVisible(false);
+            stackPaneAdicionarFeedback.setVisible(false);
+            stackPaneComentarFeedback.setVisible(false);
+        });
+
+        adicionarFeedback.setOnAction(event -> {
+            stackPaneEventos.setVisible(false);
+            stackPaneSelecionarIngresso.setVisible(false);
+            stackPaneComprarIngresso.setVisible(false);
+            stackPaneFeedbacksEventos.setVisible(false);
+            stackPaneIngressosComprados.setVisible(false);
+            stackPaneAdicionarFeedback.setVisible(true);
+            stackPaneComentarFeedback.setVisible(false);
         });
 
     }
@@ -266,6 +318,7 @@ public class HomeUserController {
             usuario.adicionarPagamento(pagamento);
             System.out.println("Pagamento adicionado com sucesso!");
             Ingresso ingresso = new Ingresso(eventoIngresso, precoAleatorio, assentoDes);
+            eventoIngresso.removerAssento(assentoDes);
             usuario.adicionarIngresso(ingresso);
             System.out.println("Ingresso adicionado com sucesso!");
 
@@ -340,6 +393,177 @@ public class HomeUserController {
             System.err.println("Erro ao carregar eventos: " + e.getMessage());
             e.printStackTrace();
         }
+    }
+
+    private void carregarIngressos(){
+        try {
+            Usuario usuario = LoginController.getUsuarioAtual();
+            List<Ingresso> ingressos = usuario.getIngressos();
+
+            ingressosContainer.getChildren().clear();
+
+            SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+
+            for (Ingresso ingresso : ingressos) {
+                if (ingresso != null) {
+                    VBox vboxIngressos = new VBox();
+                    vboxIngressos.setSpacing(10);
+                    vboxIngressos.setStyle(
+                            "-fx-padding: 10; -fx-background-color: #ffffff; -fx-border-color: #c1c1c1; -fx-border-radius: 10; -fx-background-radius: 10;");
+
+                    Text nome = new Text("Evento: " + ingresso.getEvento().getNome());
+                    nome.setStyle("-fx-font-size: 16; -fx-font-weight: bold;");
+
+                    String dataFormatada = dateFormat.format(ingresso.getEvento().getData());
+                    Text data = new Text("Data: " + dataFormatada);
+                    data.setStyle("-fx-font-size: 14;");
+
+                    Text preco = new Text("Preço: " + ingresso.getPreco());
+                    preco.setStyle("-fx-font-size: 14;");
+
+                    Text assento = new Text("Assento: " + ingresso.getAssento());
+                    assento.setStyle("-fx-font-size: 14;");
+
+                    vboxIngressos.getChildren().addAll(nome, data, preco, assento);
+                    ingressosContainer.getChildren().add(vboxIngressos);
+                }
+            }
+        } catch (Exception e) {
+            System.err.println("Erro ao carregar ingressos: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+
+    private void carregarFeedbacks() {
+        try {
+            // Carrega a lista de eventos do repositório
+            List<Evento> eventos = repository.carregarEventos();
+
+            // Limpa o contêiner de feedbacks antes de adicionar novos
+            feedbacksContainer.getChildren().clear();
+
+            SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+
+            for (Evento evento : eventos) {
+                if (evento != null) {
+                    // Garante que a lista de feedbacks não seja null
+                    if (evento.getFeedbacks() == null) {
+                        evento.setFeedbacks(new ArrayList<>());
+                    }
+
+                    // Cria um contêiner visual para o evento
+                    VBox vboxEvento = new VBox();
+                    vboxEvento.setSpacing(10);
+                    vboxEvento.setStyle(
+                            "-fx-padding: 10; -fx-background-color: #ffffff; -fx-border-color: #c1c1c1; " +
+                                    "-fx-border-radius: 10; -fx-background-radius: 10;");
+
+                    // Informações básicas do evento
+                    Text nome = new Text("Nome: " + evento.getNome());
+                    nome.setStyle("-fx-font-size: 16; -fx-font-weight: bold;");
+
+                    String dataFormatada = dateFormat.format(evento.getData());
+                    Text data = new Text("Data: " + dataFormatada);
+                    data.setStyle("-fx-font-size: 14;");
+
+                    Text id = new Text("ID: " + evento.getId());
+                    id.setStyle("-fx-font-size: 14;");
+
+                    // Exibe os feedbacks do evento
+                    VBox feedbacksBox = new VBox();
+                    feedbacksBox.setSpacing(5);
+                    feedbacksBox.setStyle("-fx-padding: 5; -fx-background-color: #f9f9f9; -fx-border-radius: 5;");
+
+                    if (evento.getFeedbacks().isEmpty()) {
+                        Text noFeedbacks = new Text("Sem feedbacks para este evento.");
+                        noFeedbacks.setStyle("-fx-font-size: 14; -fx-font-style: italic;");
+                        feedbacksBox.getChildren().add(noFeedbacks);
+                    } else {
+                        for (Feedback feedback : evento.getFeedbacks()) {
+                            if (feedback != null) {
+                                String comentario = feedback.getComentario();
+                                String autor = feedback.getUsuario() != null ? feedback.getUsuario().getNome() : "Anônimo";
+
+                                Text feedbackText = new Text("- " + comentario + " (por " + autor + ")");
+                                feedbackText.setStyle("-fx-font-size: 14;");
+                                feedbacksBox.getChildren().add(feedbackText);
+                            }
+                        }
+                    }
+
+                    // Adiciona os elementos ao contêiner do evento
+                    vboxEvento.getChildren().addAll(nome, data, id, feedbacksBox);
+                    feedbacksContainer.getChildren().add(vboxEvento);
+                }
+            }
+        } catch (Exception e) {
+            System.err.println("Erro ao carregar feedbacks: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+
+
+
+
+    public void selecionarEventoComentar(){
+        String id = idEventoFeedback.getText();
+        try {
+            List<Evento> eventos = repository.carregarEventos();
+            boolean eventoEncontrado = false;
+
+            for (Evento evento : eventos) {
+                if (evento != null && evento.getId().equals(id)) {
+                    eventoEncontrado = true;
+                    break;
+                }
+            }
+            if (!eventoEncontrado) {
+                ErroController.exibirMensagemErro("Erro de Validação", "Evento com ID " + id + " não encontrado.");
+                return; // Sai do método para evitar execução posterior
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            return; // Sai do método se ocorrer uma exceção
+        }
+
+        stackPaneEventos.setVisible(false);
+        stackPaneSelecionarIngresso.setVisible(false);
+        stackPaneComprarIngresso.setVisible(false);
+        stackPaneFeedbacksEventos.setVisible(false);
+        stackPaneIngressosComprados.setVisible(false);
+        stackPaneAdicionarFeedback.setVisible(false);
+        stackPaneComentarFeedback.setVisible(true);
+    }
+
+    public void enviarComentario() {
+        // Obtém os dados do comentário e do evento
+        String comentarioText = comentario.getText();
+        String id = idEvento.getText();
+        Usuario usuarioAtual = LoginController.getUsuarioAtual();
+
+        // Carrega os eventos e busca o evento correspondente pelo ID
+        List<Evento> eventos = repository.carregarEventos();
+
+        for (Evento evento : eventos) {
+            if (evento != null && evento.getId().equals(id)) {
+                Feedback feedback = new Feedback(usuarioAtual, evento, comentarioText, 0, new Date(), null);
+                evento.adicionarFeedback(feedback);
+
+                // Salva os eventos após adicionar o feedback
+                repository.salvarEventos(eventos);
+                break;
+            }
+        }
+
+
+        stackPaneEventos.setVisible(true);
+        stackPaneSelecionarIngresso.setVisible(false);
+        stackPaneComprarIngresso.setVisible(false);
+        stackPaneFeedbacksEventos.setVisible(false);
+        stackPaneIngressosComprados.setVisible(false);
+        stackPaneAdicionarFeedback.setVisible(false);
+        stackPaneComentarFeedback.setVisible(false);
+
     }
 
     @FXML
