@@ -11,8 +11,7 @@ import java.util.List;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
-import vendaingressos.models.Evento;
-import vendaingressos.models.Usuario;
+import vendaingressos.models.*;
 
 public class Repository {
 
@@ -31,6 +30,7 @@ public class Repository {
 
 
     private <T> void salvarDados(List<T> dados, String filePath) {
+        System.out.println("entrei em salvar dados");
         String json = gson.toJson(dados);
         File file = new File(filePath);
         try {
@@ -38,8 +38,11 @@ public class Repository {
                 System.out.println("Arquivo criado: " + filePath);
             }
             try (FileWriter fileWriter = new FileWriter(file)) {
+                System.out.println("entrei no try");
                 fileWriter.write(json);
+                System.out.println("escreveu no json");
                 fileWriter.flush();
+                System.out.println("tudo beleza");
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -87,8 +90,14 @@ public class Repository {
 
     // Eventos
     public void salvarEventos(List<Evento> eventos) {
+        if (eventos == null || eventos.isEmpty()) {
+            System.out.println("Lista de eventos vazia ou nula");
+            return;
+        }
+        System.out.println("Salvando eventos");
         salvarDados(eventos, FILE_EVENTOS);
     }
+
 
     public List<Evento> carregarEventos() {
         Type eventosListType = new TypeToken<ArrayList<Evento>>() {}.getType();

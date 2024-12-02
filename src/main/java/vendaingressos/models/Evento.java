@@ -27,6 +27,7 @@ public class Evento {
      * @param nome       O nome do evento.
      * @param descricao  A descrição do evento.
      * @param data       A data do evento.
+     * @param id         O identificador único do evento.
      */
     public Evento(String nome, String descricao, Date data, String id) {
         this.nome = nome;
@@ -37,6 +38,20 @@ public class Evento {
         this.id = id;
         this.feedbacks = new ArrayList<>();
     }
+
+    @Override
+    public String toString() {
+        return "Evento{" +
+                "nome='" + nome + '\'' +
+                ", descricao='" + descricao + '\'' +
+                ", data=" + data +
+                ", assentos=" + assentos +
+                ", isAtivo=" + isAtivo +
+                ", id='" + id + '\'' +
+                ", feedbacks=" + feedbacks +
+                '}';
+    }
+
 
     /**
      * Retorna o nome do evento.
@@ -142,14 +157,6 @@ public class Evento {
         return assentos;
     }
 
-    /**
-     * Retorna a lista de feedbacks do evento.
-     *
-     * @return A lista de feedbacks.
-     */
-    public List<Feedback> getFeedbacks() {
-        return feedbacks;
-    }
 
     /**
      * Adiciona um feedback ao evento. O feedback só é adicionado se
@@ -170,11 +177,22 @@ public class Evento {
         this.feedbacks = feedbacks;
     }
 
+    /**
+     * Adiciona um feedback ao evento.
+     *
+     * @param feedback O feedback a ser adicionado.
+     */
     public void adicionarFeedback(Feedback feedback) {
-        if (feedbacks == null) {
-            feedbacks = new ArrayList<>();
-        }
-        feedbacks.add(feedback);
+       this.feedbacks.add(feedback);  // Adiciona o feedback à lista de feedbacks
+    }
+
+    /**
+     * Retorna a lista de feedbacks do evento.
+     *
+     * @return A lista de feedbacks.
+     */
+    public List<Feedback> getFeedbacks() {
+        return feedbacks;
     }
 }
 

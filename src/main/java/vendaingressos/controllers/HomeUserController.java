@@ -92,8 +92,8 @@ public class HomeUserController {
     //--
 
     private final Repository repository;
-    private List<Evento> eventos;
     private List<Usuario> usuarios;
+    private List<Evento> eventos;
 
     public HomeUserController() {
         this.repository = new Repository();
@@ -535,22 +535,36 @@ public class HomeUserController {
         stackPaneComentarFeedback.setVisible(true);
     }
 
+    private Date converterStringParaDate(String dataString) {
+        try {
+            SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+            dateFormat.setLenient(false);
+            return dateFormat.parse(dataString);
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
     public void enviarComentario() {
         String comentarioText = comentario.getText();
         String id = idEventoFeedback.getText();
         Usuario usuarioAtual = LoginController.getUsuarioAtual();
 
-        List<Evento> eventos = repository.carregarEventos();
-        System.out.println(eventos);
+
         for (Evento evento : eventos) {
             if (evento != null && evento.getId().equals(id)) {
-                Feedback feedback = new Feedback(usuarioAtual, evento, comentarioText, 0, null, null);
+                Feedback feedback = new Feedback(usuarioAtual, comentarioText, new Date());
                 evento.adicionarFeedback(feedback);
                 break;
             }
         }
 
-        repository.salvarEventos(eventos);//O PROBLEMA TA AQUI NAO SEI O QUE FAÇO TO FICANDO MALUCO AAAAAAAAAAAA
+        for (Evento evento : eventos) {
+            System.out.println(evento);
+        }
+
+        repository.salvarEventos(eventos);
+        carregarEventos();
 
         stackPaneEventos.setVisible(true);
         stackPaneSelecionarIngresso.setVisible(false);
@@ -559,7 +573,6 @@ public class HomeUserController {
         stackPaneIngressosComprados.setVisible(false);
         stackPaneAdicionarFeedback.setVisible(false);
         stackPaneComentarFeedback.setVisible(false);
-
     }
 
     @FXML

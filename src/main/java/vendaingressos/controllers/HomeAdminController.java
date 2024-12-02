@@ -303,7 +303,7 @@ public class HomeAdminController {
     }
 
 
-    private ArrayList<String> converterStringParaArrayList(String assentosString) {
+    public static ArrayList<String> converterStringParaArrayList(String assentosString) {
         try {
             String[] assentosArray = assentosString.split(","); // Dividir por vírgulas
             return new ArrayList<>(Arrays.asList(assentosArray));
