@@ -155,13 +155,7 @@ public class Evento {
      * Adiciona um feedback ao evento. O feedback só é adicionado se
      * o comentário for válido.
      *
-     * @param feedback O feedback a ser adicionado.
-     */
-    public void adicionarFeedback(Feedback feedback) {
-        String comentario = feedback.getComentario();
-        feedbacks.add(feedback);
-
-    }
+     * @param feedback O feedback a ser adic
 
     /**
      * Remove um feedback do evento.
@@ -176,6 +170,12 @@ public class Evento {
         this.feedbacks = feedbacks;
     }
 
+    public void adicionarFeedback(Feedback feedback) {
+        if (feedbacks == null) {
+            feedbacks = new ArrayList<>();
+        }
+        feedbacks.add(feedback);
+    }
 }
 
 /*******************************

@@ -8,7 +8,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/vendaingressos/controllers/HomeUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vendaingressos/controllers/HomeUserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/vendaingressos/models/Evento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vendaingressos/models/Evento.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/views/homeUser.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/homeUser.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vendaingressos/repository/usuarios.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vendaingressos/repository/usuarios.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -290,7 +290,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733060248434</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Initial commit">
+      <option name="closed" value="true" />
+      <created>1733074340598</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1733074340599</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

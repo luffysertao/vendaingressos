@@ -536,25 +536,24 @@ public class HomeUserController {
     }
 
     public void enviarComentario() {
-        // Obtém os dados do comentário e do evento
         String comentarioText = comentario.getText();
-        String id = idEvento.getText();
+        String id = idEventoFeedback.getText();
         Usuario usuarioAtual = LoginController.getUsuarioAtual();
 
-        // Carrega os eventos e busca o evento correspondente pelo ID
         List<Evento> eventos = repository.carregarEventos();
-
+        System.out.println(eventos);
         for (Evento evento : eventos) {
             if (evento != null && evento.getId().equals(id)) {
-                Feedback feedback = new Feedback(usuarioAtual, evento, comentarioText, 0, new Date(), null);
+                System.out.println("OI");
+                Feedback feedback = new Feedback(usuarioAtual, evento, comentarioText, 0, null, null);
+                System.out.println("OIIIII");
                 evento.adicionarFeedback(feedback);
-
-                // Salva os eventos após adicionar o feedback
-                repository.salvarEventos(eventos);
+                System.out.println("ta aqui home");
                 break;
             }
         }
 
+        repository.salvarEventos(eventos);
 
         stackPaneEventos.setVisible(true);
         stackPaneSelecionarIngresso.setVisible(false);
