@@ -10,5 +10,20 @@
     ],
     "isAtivo": true,
     "id": "123"
+  },
+  {
+    "nome": "Cinema",
+    "descricao": "Mt top adoro",
+    "data": "23/12/2024",
+    "assentos": [
+      "A1",
+      "A2",
+      "A3",
+      "A4",
+      "A5"
+    ],
+    "isAtivo": true,
+    "id": "155",
+    "feedbacks": []
   }
 ]

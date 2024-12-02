@@ -544,16 +544,13 @@ public class HomeUserController {
         System.out.println(eventos);
         for (Evento evento : eventos) {
             if (evento != null && evento.getId().equals(id)) {
-                System.out.println("OI");
                 Feedback feedback = new Feedback(usuarioAtual, evento, comentarioText, 0, null, null);
-                System.out.println("OIIIII");
                 evento.adicionarFeedback(feedback);
-                System.out.println("ta aqui home");
                 break;
             }
         }
 
-        repository.salvarEventos(eventos);
+        repository.salvarEventos(eventos);//O PROBLEMA TA AQUI NAO SEI O QUE FAÇO TO FICANDO MALUCO AAAAAAAAAAAA
 
         stackPaneEventos.setVisible(true);
         stackPaneSelecionarIngresso.setVisible(false);
