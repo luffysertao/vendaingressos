@@ -199,7 +199,7 @@ public class Evento {
 /*******************************
  Autor: Felipe Amorim do Carmo Silva
  Componente Curricular: EXA863 - MI - PROGRAMAÇÃO
- Concluído em: 11/09/2024
+ Concluído em: 01/12/2024
  Declaro que este código foi elaborado por mim de forma individual e não contém nenhum
  trecho de código de outro colega ou de outro autor, tais como provindos de livros e
  apostilas, e páginas ou documentos eletrônicos da Internet. Qualquer trecho de código
