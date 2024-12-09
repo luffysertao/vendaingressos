@@ -54,7 +54,7 @@ public class RegisterController {
         } else if (!email.matches(regexEmail)) {
             ErroController.exibirMensagemErro("Erro de Validação", "O e-mail fornecido é inválido. Use o formato exemplo@dominio.com.");
         } else if (!Objects.equals(confirmarSenha, senha)){
-            ErroController.exibirMensagemErro("Erro de Validação", "Senhas diferente");
+            ErroController.exibirMensagemErro("Erro de Validação", "Senhas diferentes");
         }
         else{
 

@@ -28,6 +28,8 @@ public class HomeUserController {
     private VBox ingressosContainer;
     @FXML
     private VBox feedbacksContainer;
+    @FXML
+    private VBox assentosContainer;
 
     //Stacks da Home
     @FXML
@@ -254,6 +256,8 @@ public class HomeUserController {
         stackPaneSelecionarIngresso.setVisible(false);
         stackPaneComprarIngresso.setVisible(true);
         stackPaneFeedbacksEventos.setVisible(false);
+        carregarAssentos();
+
     }
 
     public void metodoPagamento() {
@@ -535,16 +539,6 @@ public class HomeUserController {
         stackPaneComentarFeedback.setVisible(true);
     }
 
-    private Date converterStringParaDate(String dataString) {
-        try {
-            SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-            dateFormat.setLenient(false);
-            return dateFormat.parse(dataString);
-        } catch (Exception e) {
-            return null;
-        }
-    }
-
     public void enviarComentario() {
         String comentarioText = comentario.getText();
         String id = idEventoFeedback.getText();
@@ -574,6 +568,57 @@ public class HomeUserController {
         stackPaneAdicionarFeedback.setVisible(false);
         stackPaneComentarFeedback.setVisible(false);
     }
+
+    private void carregarAssentos() {
+        try {
+            String id = idEvento.getText(); // Obtém o ID do evento selecionado
+
+            List<Evento> eventos = repository.carregarEventos(); // Carrega todos os eventos
+            Evento eventoSelecionado = null;
+
+            // Busca o evento pelo ID
+            for (Evento evento : eventos) {
+                if (evento != null && evento.getId().equals(id)) {
+                    eventoSelecionado = evento;
+                    break;
+                }
+            }
+
+            // Verifica se encontrou o evento
+            if (eventoSelecionado == null) {
+                System.err.println("Evento não encontrado para o ID: " + id);
+                return;
+            }
+
+            // Limpa o container de assentos
+            assentosContainer.getChildren().clear();
+
+            // Cria a interface para exibir os assentos
+            VBox vboxEvento = new VBox();
+            vboxEvento.setSpacing(10);
+            vboxEvento.setStyle(
+                    "-fx-padding: 10; -fx-background-color: #ffffff; -fx-border-color: #c1c1c1; -fx-border-radius: 10; -fx-background-radius: 10;");
+
+            Text assentosTitulo = new Text("Assentos disponíveis:");
+            assentosTitulo.setStyle("-fx-font-size: 14; -fx-font-weight: bold;");
+
+            // Junta os assentos em uma única linha separados por vírgulas
+            String assentosTexto = String.join(", ", eventoSelecionado.getAssentos());
+            Text textoAssentos = new Text(assentosTexto);
+            textoAssentos.setStyle("-fx-font-size: 12;");
+
+            // Adiciona os elementos na interface
+            vboxEvento.getChildren().addAll(assentosTitulo, textoAssentos);
+            assentosContainer.getChildren().add(vboxEvento);
+
+        } catch (Exception e) {
+            System.err.println("Erro ao carregar assentos: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+
+
+
 
     @FXML
     private void goLogin(){

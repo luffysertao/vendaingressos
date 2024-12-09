@@ -37,11 +37,6 @@
                         <Insets top="25.0" />
                      </VBox.margin>
                   </FontAwesomeIcon>
-                  <FontAwesomeIcon fill="WHITE" glyphName="GEAR" size="3em" text="">
-                     <VBox.margin>
-                        <Insets left="5.0" top="25.0" />
-                     </VBox.margin>
-                  </FontAwesomeIcon>
                </children>
                <padding>
                   <Insets top="25.0" />
@@ -76,11 +71,6 @@
                </font>
             </Text>
             <Text fill="WHITE" layoutX="108.0" layoutY="464.0" strokeType="OUTSIDE" strokeWidth="0.0" text="FEEDBACK">
-               <font>
-                  <Font name="System Bold" size="18.0" />
-               </font>
-            </Text>
-            <Text fill="WHITE" layoutX="107.0" layoutY="525.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CONFIG">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
@@ -203,7 +193,7 @@
                                  <children>
                                     <AnchorPane prefHeight="200.0" prefWidth="200.0">
                                        <children>
-                                          <TextField fx:id="cpfCompra" layoutX="18.0" layoutY="14.0" prefHeight="25.0" prefWidth="265.0" promptText="CPF *" style="-fx-background-color: transparent;" />
+                                          <TextField fx:id="cpfCompra" layoutX="18.0" layoutY="14.0" prefHeight="25.0" prefWidth="265.0" promptText="CPF (11 digitos sem espaço)*" style="-fx-background-color: transparent;" />
                                        </children>
                                     </AnchorPane>
                                  </children>
@@ -221,7 +211,7 @@
                                  <children>
                                     <AnchorPane prefHeight="200.0" prefWidth="200.0">
                                        <children>
-                                          <TextField fx:id="numeroCartaoCompra" layoutX="18.0" layoutY="14.0" prefHeight="25.0" prefWidth="265.0" promptText="Número do Cartão *" style="-fx-background-color: transparent;" />
+                                          <TextField fx:id="numeroCartaoCompra" layoutX="18.0" layoutY="14.0" prefHeight="25.0" prefWidth="265.0" promptText="Número do Cartão(16 digitos sem espaço) *" style="-fx-background-color: transparent;" />
                                        </children>
                                     </AnchorPane>
                                  </children>
@@ -235,7 +225,7 @@
                                     </AnchorPane>
                                  </children>
                               </VBox>
-                              <VBox fx:id="removerEventoContainer112" layoutX="78.0" layoutY="89.0" prefHeight="52.0" prefWidth="300.0" style="-fx-background-color: FFFF; -fx-background-radius: 30px 30px 30px 30px; -fx-border-radius: 30px 30px 30px 30px;" />
+                              <VBox fx:id="assentosContainer" layoutX="78.0" layoutY="89.0" prefHeight="52.0" prefWidth="300.0" style="-fx-background-color: FFFF; -fx-background-radius: 30px 30px 30px 30px; -fx-border-radius: 30px 30px 30px 30px;" />
                               <Text layoutX="78.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Assentos disponíveis: ">
                                  <font>
                                     <Font name="System Bold" size="12.0" />
